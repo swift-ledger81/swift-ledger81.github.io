@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>溏心vlog网页版-视频日记与生活记录指南</title>
+<meta name="description" content="溏心vlog网页版提供视频日记、生活记录、拍摄剪辑与账号运营的实用指南。这里整理每日更新、分类频道、深度解析和体验建议，帮助内容创作者找到可执行的记录方法，了解平台规则、时长取舍与选题节奏，少走弯路。">
+<meta name="keywords" content="溏心vlog网页版">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f2a63b'/%3E%3Ccircle cx='32' cy='32' r='16' fill='%23fff4dc'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23c8561b'/%3E%3Cpath d='M28 26l10 6-10 6z' fill='%23fff4dc'/%3E%3C/svg%3E">
+<style>
+:root{
+  --main:#c8561b;
+  --main-deep:#9c3d0e;
+  --main-soft:#fde9d6;
+  --accent:#2f6f5e;
+  --accent-soft:#e2f0ea;
+  --ink:#2b2320;
+  --ink-soft:#5c514b;
+  --line:#e8ddd2;
+  --bg:#fffaf3;
+  --card:#fff;
+  --radius:12px;
+  --shadow:0 2px 10px rgba(80,50,20,.07);
+  --shadow-hover:0 6px 18px rgba(80,50,20,.12);
+  --space:20px;
+  --sticky-h:104px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px}
+a{color:var(--main-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.35;margin:0 0 .6em}
+h2{font-size:clamp(1.3rem,2.4vw,1.6rem);color:var(--ink);border-left:5px solid var(--main);padding-left:12px}
+h3{font-size:1.08rem;color:var(--main-deep);margin-top:1.2em}
+p{margin:.65em 0}
+ul,ol{padding-left:1.35em;margin:.6em 0}
+li{margin:.35em 0}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 18px}
+
+/* 公告条 + 页头 吸顶 */
+.sticky-zone{position:sticky;top:0;z-index:60}
+.announce{background:linear-gradient(90deg,var(--main-deep),var(--main));color:#fff;font-size:.86rem}
+.announce .wrap{display:flex;align-items:center;gap:10px;padding:7px 18px;flex-wrap:wrap}
+.announce .tag{background:#fff;color:var(--main-deep);border-radius:20px;padding:1px 10px;font-weight:700;font-size:.78rem}
+.announce a{color:#fff5e6;text-decoration:underline}
+header.site{background:rgba(255,250,243,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(80,50,20,.05)}
+.site-inner{display:flex;align-items:center;gap:18px;padding:10px 18px;max-width:1160px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.12rem;color:var(--main-deep);white-space:nowrap}
+.brand svg{flex:0 0 40px}
+nav.main-nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav.main-nav a{padding:6px 10px;border-radius:8px;font-size:.9rem;color:var(--ink-soft)}
+nav.main-nav a:hover,nav.main-nav a:focus-visible{background:var(--main-soft);color:var(--main-deep);text-decoration:none;outline:none}
+nav.main-nav a:focus-visible{box-shadow:0 0 0 2px var(--main)}
+.menu-btn{display:none;margin-left:auto;background:var(--main-soft);border:1px solid var(--main);color:var(--main-deep);font:inherit;font-size:.9rem;font-weight:700;padding:6px 14px;border-radius:9px;cursor:pointer}
+.menu-btn:focus-visible{outline:2px solid var(--main);outline-offset:2px}
+.search-box{margin-left:8px;display:flex;align-items:center;gap:6px}
+.search-box input{width:150px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;font:inherit;font-size:.88rem;background:#fff}
+.search-box input:focus{outline:2px solid var(--main);border-color:var(--main)}
+.search-box button{background:var(--main);color:#fff;border:0;border-radius:9px;padding:7px 12px;font:inherit;font-size:.86rem;font-weight:700;cursor:pointer}
+.search-box button:focus-visible{outline:2px solid var(--main-deep);outline-offset:2px}
+.search-feedback{font-size:.86rem;color:var(--accent);padding:0 18px 8px;max-width:1160px;margin:0 auto;display:none}
+.search-feedback.show{display:block}
+
+/* 首屏 */
+.hero{position:relative;overflow:hidden;background:radial-gradient(1200px 420px at 78% -12%,#ffd9ac 0%,transparent 62%),linear-gradient(160deg,#fff6e9 0%,#fdece0 55%,#f6e3d0 100%)}
+.hero-inner{display:grid;grid-template-columns:1.18fr .82fr;gap:30px;align-items:center;padding:52px 18px 46px;max-width:1160px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #f0cfae;color:var(--main-deep);border-radius:30px;padding:4px 14px;font-size:.82rem;font-weight:700;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.7rem);color:var(--ink);margin:16px 0 12px;letter-spacing:.5px}
+.hero p.lead{font-size:1.03rem;color:var(--ink-soft);max-width:33em}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.94rem}
+.btn-primary{background:var(--main);color:#fff;box-shadow:0 3px 10px rgba(200,86,27,.3)}
+.btn-primary:hover{background:var(--main-deep);text-decoration:none}
+.btn-ghost{background:#fff;color:var(--main-deep);border:1px solid var(--main)}
+.btn-ghost:hover{background:var(--main-soft);text-decoration:none}
+.hero-stats{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+.hero-stats div{background:rgba(255,255,255,.72);border:1px solid #f0dcc6;border-radius:12px;padding:10px 16px;min-width:104px}
+.hero-stats b{display:block;font-size:1.25rem;color:var(--main-deep)}
+.hero-stats span{font-size:.8rem;color:var(--ink-soft)}
+.hero-art{position:relative;min-height:290px}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 10px 22px rgba(156,61,14,.16))}
+
+/* 板块通用 */
+section.block{padding:42px 0;border-bottom:1px solid var(--line)}
+section.block:last-of-type{border-bottom:0}
+.block-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.block-head .sub{font-size:.88rem;color:var(--ink-soft)}
+.grid{display:grid;gap:var(--space)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card h3{margin-top:0}
+.card p{color:var(--ink-soft);font-size:.94rem}
+.meta{font-size:.8rem;color:#9a8677;display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.pill{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:20px;margin-bottom:6px}
+
+/* 探索式概览：非对称 */
+.overview{display:grid;grid-template-columns:1.3fr .7fr;gap:var(--space)}
+.ov-main{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.ov-side{background:var(--main-soft);border:1px dashed #e6b98d;border-radius:var(--radius);padding:18px}
+.ov-side h3{margin-top:0;color:var(--main-deep)}
+.ov-side ul{font-size:.92rem;color:var(--ink-soft)}
+.checklist{list-style:none;padding-left:0}
+.checklist li{padding-left:24px;position:relative}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:800}
+
+/* 紧凑列表 */
+.tight-list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.tight-list li{list-style:none;display:flex;gap:14px;align-items:baseline;padding:13px 18px;border-bottom:1px solid var(--line);margin:0}
+.tight-list li:last-child{border-bottom:0}
+.tight-list .t{font-size:.8rem;color:#a08a78;flex:0 0 78px}
+.tight-list a{color:var(--ink);font-weight:600;font-size:.95rem}
+.tight-list a:hover{color:var(--main-deep)}
+.tight-list .src{font-size:.8rem;color:#9a8677;margin-left:auto;white-space:nowrap}
+
+/* 分类索引标签 */
+.tag-index{display:flex;flex-wrap:wrap;gap:10px}
+.tag-index a{background:#fff;border:1px solid var(--line);border-radius:22px;padding:7px 16px;font-size:.9rem;color:var(--ink-soft);box-shadow:var(--shadow)}
+.tag-index a:hover{border-color:var(--main);color:var(--main-deep);background:var(--main-soft);text-decoration:none}
+.tag-index a small{color:#a99480;margin-left:4px}
+
+/* 深度解析 */
+.deep{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px}
+.deep .claim{background:var(--main-soft);border-left:5px solid var(--main);border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;font-size:.97rem}
+.deep .claim strong{color:var(--main-deep)}
+.deep h3{border-top:1px dashed var(--line);padding-top:16px}
+.deep h3:first-of-type{border-top:0;padding-top:0;margin-top:8px}
+.cmp-table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.cmp-table th{background:var(--accent-soft);color:var(--accent);font-weight:700}
+.cmp-table caption{caption-side:top;text-align:left;font-size:.84rem;color:#9a8677;padding-bottom:6px}
+
+/* 体验指南步骤 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space);counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);position:relative}
+.step::before{counter-increment:step;content:counter(step);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--main);color:#fff;font-weight:800;font-size:.9rem;margin-bottom:8px}
+.step h3{font-size:1rem;margin:0 0 6px}
+.step p{font-size:.9rem;color:var(--ink-soft);margin:.3em 0}
+
+/* FAQ */
+details{background:#fff;border:1px solid var(--line);border-radius:10px;margin:10px 0;box-shadow:var(--shadow)}
+summary{padding:14px 18px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;font-size:.96rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";color:var(--main);font-weight:800}
+details[open] summary::after{content:"－"}
+details .ans{padding:0 18px 16px;font-size:.93rem;color:var(--ink-soft)}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space)}
+.comment{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);position:relative}
+.comment::before{content:"“";position:absolute;top:2px;right:14px;font-size:2.6rem;color:var(--main-soft);font-family:Georgia,serif;line-height:1}
+.comment .who{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex:none}
+.comment .who b{font-size:.9rem}
+.comment .who span{font-size:.78rem;color:#9a8677}
+.comment p{font-size:.92rem;color:var(--ink-soft);margin:.4em 0}
+.stars{color:#e2a33c;font-size:.82rem;letter-spacing:1px}
+
+/* 时间线 */
+.timeline{border-left:3px solid var(--main-soft);margin-left:8px;padding-left:22px}
+.tl-item{position:relative;margin-bottom:18px}
+.tl-item::before{content:"";position:absolute;left:-30px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--main);box-shadow:0 0 0 4px var(--main-soft)}
+.tl-item time{display:block;font-size:.8rem;color:#a08a78;font-weight:700}
+.tl-item p{margin:.2em 0;font-size:.92rem}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:10px}
+.rec-tags a{background:#fff;border:1px dashed #d9b894;border-radius:8px;padding:6px 14px;font-size:.88rem;color:var(--main-deep)}
+.rec-tags a:hover{background:var(--main-soft);text-decoration:none}
+
+/* 榜单 */
+.rank{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space)}
+.rank-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
+.rank-card ol{padding-left:20px;font-size:.92rem;color:var(--ink-soft)}
+.rank-card li{margin:.4em 0}
+.rank-card strong{color:var(--ink)}
+
+/* 双栏正文 + 侧栏 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start}
+.sidebar{position:sticky;top:calc(var(--sticky-h) + 14px);background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+.sidebar h2{font-size:1rem;border-left:4px solid var(--main);padding-left:10px;margin-bottom:10px}
+.side-nav{list-style:none;padding:0;margin:0}
+.side-nav a{display:block;padding:7px 10px;border-radius:8px;font-size:.88rem;color:var(--ink-soft);border-left:3px solid transparent}
+.side-nav a:hover{background:var(--main-soft);text-decoration:none}
+.side-nav a.active{background:var(--main-soft);color:var(--main-deep);font-weight:700;border-left-color:var(--main)}
+.side-note{margin-top:14px;background:var(--accent-soft);border-radius:10px;padding:12px;font-size:.84rem;color:var(--accent)}
+.sidebar-mobile{margin-top:26px}
+
+/* 页尾 */
+footer{background:#2b2320;color:#e7d9c9;margin-top:20px}
+.foot-inner{max-width:1160px;margin:0 auto;padding:40px 18px 24px;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:28px}
+.foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;font-size:1.05rem}
+.foot-brand svg{flex:none}
+footer h3{color:#f6b26b;font-size:.92rem;margin:0 0 10px;letter-spacing:1px}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin:.35em 0;font-size:.88rem}
+footer a{color:#e7d9c9}
+footer a:hover{color:#fff;text-decoration:underline}
+.foot-note{font-size:.82rem;color:#b8a797;line-height:1.7}
+.foot-bottom{max-width:1160px;margin:0 auto;padding:14px 18px 26px;border-top:1px solid #4a3d35;font-size:.8rem;color:#b8a797;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+/* 回到顶部 */
+#toTop{position:fixed;right:18px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:50%;border:0;background:var(--main);color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(156,61,14,.4);display:none;align-items:center;justify-content:center}
+#toTop.show{display:flex}
+#toTop:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.no-result{display:none;background:#fff6e9;border:1px dashed var(--main);border-radius:10px;padding:14px 18px;color:var(--ink-soft);font-size:.92rem;margin-top:12px}
+.no-result.show{display:block}
+
+/* 平板 */
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;padding-top:36px}
+  .hero-art{max-width:420px}
+  .g3,.rank{grid-template-columns:repeat(2,1fr)}
+  .overview{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .comments{grid-template-columns:1fr}
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;order:2}
+  .side-wrap{display:none}
+  .sidebar-mobile{display:block}
+  .foot-inner{grid-template-columns:1fr 1fr}
+  :root{--sticky-h:118px}
+}
+/* 手机 */
+@media (max-width:640px){
+  .site-inner{flex-wrap:wrap;padding:10px 14px;gap:10px}
+  .menu-btn{display:inline-block}
+  nav.main-nav{display:none;width:100%;flex-direction:column;order:5;border-top:1px solid var(--line);padding-top:8px;margin-top:2px}
+  nav.main-nav.open{display:flex}
+  nav.main-nav a{padding:10px 12px;border-radius:8px}
+  .search-box{margin-left:auto;width:100%;order:6;display:none}
+  .search-box.open{display:flex}
+  .search-box input{flex:1;width:auto}
+  .search-feedback{font-size:.82rem}
+  .g3,.g2,.rank,.steps,.foot-inner{grid-template-columns:1fr}
+  .hero-stats{gap:12px}
+  .hero-stats div{flex:1 1 40%}
+  .announce .wrap{padding:7px 14px;font-size:.8rem}
+  .tight-list li{flex-wrap:wrap;gap:4px}
+  .tight-list .src{margin-left:0}
+  :root{--sticky-h:96px}
+  #toTop{width:42px;height:42px;bottom:16px;right:14px}
+  .deep{padding:18px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-zone">
+  <div class="announce" role="region" aria-label="更新公告">
+    <div class="wrap">
+      <span class="tag">更新</span>
+      <span>11月7日新增《一分钟生活切片》第12期拆解，补录10月28日剪辑模板说明。</span>
+      <a href="/#latest">查看更新列表</a>
+    </div>
+  </div>
+  <header class="site">
+    <div class="site-inner">
+      <a class="brand" href="/#top" aria-label="溏心vlog网页版首页">
+        <svg width="40" height="40" viewBox="0 0 64 64" role="img" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#f2a63b"/>
+          <circle cx="32" cy="30" r="15" fill="#fff4dc"/>
+          <circle cx="32" cy="30" r="7" fill="#c8561b"/>
+          <path d="M29 25.5l9 4.5-9 4.5z" fill="#fff4dc"/>
+          <rect x="18" y="48" width="28" height="5" rx="2.5" fill="#9c3d0e"/>
+        </svg>
+        <span>溏心vlog网页版</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">菜单</button>
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">分类</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="search-box" id="searchBox" role="search">
+        <input type="search" id="siteSearch" placeholder="搜索条目、频道、问题" aria-label="站内搜索">
+        <button type="button" id="searchBtn">查找</button>
+      </div>
+    </div>
+    <div class="search-feedback" id="searchFeedback" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-badge">视频日记 · 生活记录 · 创作者实用参考</span>
+        <h1 id="heroTitle">溏心vlog网页版</h1>
+        <p class="lead">把日常拍成能回看的片段：从选题、拍摄到剪辑发布，这里整理可核对的时间线、时长取舍和账号数据对照，帮你在镜头前把生活讲清楚。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#featured">看本周精选拆解</a>
+          <a class="btn btn-ghost" href="/#guide">从第一条视频开始</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>11</b><span>内容板块</span></div>
+          <div><b>10</b><span>具体频道</span></div>
+          <div><b>28</b><span>示例条目</span></div>
+          <div><b>2026-11-08</b><span>数据核对日</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 460 340" role="presentation">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ffe9cc"/><stop offset="1" stop-color="#f7c992"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#3b7a68"/><stop offset="1" stop-color="#25564a"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="34" width="424" height="272" rx="20" fill="url(#g1)"/>
+          <rect x="44" y="60" width="250" height="150" rx="12" fill="#fffaf3" stroke="#e2b184" stroke-width="2"/>
+          <circle cx="100" cy="112" r="20" fill="#f2a63b"/>
+          <path d="M64 190l44-40 34 30 30-26 34 36z" fill="#e9c39c"/>
+          <circle cx="150" cy="112" r="20" fill="#c8561b" opacity=".8"/>
+          <rect x="44" y="228" width="250" height="12" rx="6" fill="#e9c39c"/>
+          <rect x="44" y="248" width="180" height="10" rx="5" fill="#eed6bb"/>
+          <g>
+            <rect x="312" y="76" width="104" height="186" rx="16" fill="#fffaf3" stroke="#e2b184" stroke-width="2"/>
+            <rect x="326" y="92" width="76" height="56" rx="8" fill="url(#g2)"/>
+            <circle cx="364" cy="120" r="12" fill="#ffe9cc"/>
+            <path d="M358 114l14 6-14 6z" fill="#c8561b"/>
+            <rect x="326" y="160" width="76" height="8" rx="4" fill="#e2b184"/>
+            <rect x="326" y="176" width="58" height="8" rx="4" fill="#edd8c1"/>
+            <rect x="326" y="192" width="68" height="8" rx="4" fill="#edd8c1"/>
+            <rect x="326" y="212" width="44" height="22" rx="11" fill="#f2a63b"/>
+          </g>
+          <circle cx="392" cy="44" r="10" fill="#c8561b" opacity=".55"/>
+          <circle cx="66" cy="290" r="8" fill="#3b7a68" opacity=".6"/>
+          <path d="M290 284h130" stroke="#e2b184" stroke-width="3" stroke-dasharray="6 8"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" id="mainContent">
+
+    <!-- 领域概览 -->
+    <section class="block" id="overview" aria-labelledby="hOverview">
+      <div class="block-head">
+        <h2 id="hOverview">领域概览：视频日记正在被什么改变</h2>
+        <span class="sub">先分清三类记录方式，再决定拍什么</span>
+      </div>
+      <div class="overview">
+        <div class="ov-main">
+          <p>视频日记的外壳是「一天拍下来」，内核其实是取舍。B站UP主“梅子汽水”在10月30日的动态里提到，她连续三年日更后把片长从8分钟压到2分半，完播率从31%升到57%。这条自述能解释一个常见现象：观众不是不爱看长内容，是不爱看没有重点的长内容。</p>
+          <p>按记录强度，常见做法分三类。第一类是全天候记录，素材量常在两小时以上，适合旅行、婚礼、毕业季这类一次性事件；第二类是定点记录，每天固定拍早餐、通勤、书桌的一段时间，单条素材10到20分钟；第三类是事件切片，只拍一个动作或一次对话，成片往往在60秒内。三类对应不同的剪辑模板，混用容易在时间线上卡壳。</p>
+          <ul class="checklist">
+            <li>全天候记录：素材多、情绪完整，但整理成本最高，10月29日一条3小时素材的工程文件导出花了42分钟。</li>
+            <li>定点记录：可周更可日更，适合形成连载，观众记得住场景。</li>
+            <li>事件切片：时长最短，对构图和声音要求反而更高。</li>
+          </ul>
+          <p>判断自己适合哪一类，可以看两件事：每周能稳定拿出多少拍摄时间，以及是否愿意在剪辑台上坐满素材时长的三倍。小红书账号“阿朴的记录本”在11月2日的笔记里写，她第一月拍满90条素材，剪完的只有7条——这不是失败，是筛选。</p>
+        </div>
+        <aside class="ov-side">
+          <h3>三条判断标准</h3>
+          <ul>
+            <li><strong>素材时长</strong>：单条超过90分钟，先考虑拆成两条。</li>
+            <li><strong>信息密度</strong>：每30秒至少一个动作或一句具体的话。</li>
+            <li><strong>可持续性</strong>：连续四周能完成才算稳定节奏。</li>
+          </ul>
+          <p style="font-size:.86rem;color:#9c3d0e;margin-top:12px">11月5日更新的剪辑模板页里，定点记录的预设工程占了6个。</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="block" id="featured" aria-labelledby="hFeatured">
+      <div class="block-head">
+        <h2 id="hFeatured">精选内容推荐：本周值得逐帧看的四条</h2>
+        <span class="sub">每条附可核对的时间点与做法</span>
+      </div>
+      <div class="grid g3">
+        <article class="card">
+          <span class="pill">拍摄手法</span>
+          <h3>《一分钟生活切片》第12期：早餐桌的固定机位</h3>
+          <p>UP主“梅子汽水”把机位架在冰箱上方，俯拍早餐全过程，全程一镜到底。11月7日这期里，前40秒没有人声，靠锅铲和倒水声推进。可对照的细节在第52秒：她把手伸进画面拿杯子，制造了第一次视线引导。</p>
+          <div class="meta"><span>11月7日</span><span>时长 1:58</span><span>B站</span></div>
+        </article>
+        <article class="card">
+          <span class="pill">剪辑节奏</span>
+          <h3>通勤vlog的转场减法：从14个切到5个</h3>
+          <p>抖音账号“早八人小林”11月3日发的对比视频，把同一段地铁通勤分别用快切和长镜头呈现。快切版本完播率19%，长镜头版本34%。长镜头那版保留了报站声和开门提示音，观众在评论区说“像自己坐过一次”。</p>
+          <div class="meta"><span>11月3日</span><span>时长 2:16</span><span>抖音</span></div>
+        </article>
+        <article class="card">
+          <span class="pill">账号运营</span>
+          <h3>连续日更30天的数据起落表</h3>
+          <p>小红书“阿朴的记录本”11月1日公开了30天后台截图：第1周平均播放1180，第2周掉到640，第3周回升到2100。她在笔记里把原因归到第16天换的封面字体，这个解释可以质疑，但数据本身是公开的。</p>
+          <div class="meta"><span>11月1日</span><span>含6张后台图</span><span>小红书</span></div>
+        </article>
+        <article class="card">
+          <span class="pill">设备实测</span>
+          <h3>手机外接麦克风在菜市场的信噪比</h3>
+          <p>UP主“录音师老陈”10月31日拿三款领夹麦在同一个菜市场测试，环境噪音约72分贝。售价249元的款在离嘴15厘米时人声清晰度最好，价位更高的款因为指向性太窄，反而收进了更多叫卖声。</p>
+          <div class="meta"><span>10月31日</span><span>时长 6:40</span><span>B站</span></div>
+        </article>
+        <article class="card">
+          <span class="pill">场景选择</span>
+          <h3>出租屋书桌的三点布光替代方案</h3>
+          <p>没有补光灯的情况下，UP主“小满的房间”用台灯加白纸做柔光，11月4日的视频里给出了灯位草图：主灯在左前方45度，白纸距灯20厘米，背光靠窗户。整条视频没买新设备。</p>
+          <div class="meta"><span>11月4日</span><span>时长 4:12</span><span>B站</span></div>
+        </article>
+        <article class="card">
+          <span class="pill">叙事结构</span>
+          <h3>把一次搬家剪成三段时间线</h3>
+          <p>“梅子汽水”10月28日的搬家vlog没有按时间顺序剪，而是拆成“找房—打包—新家第一晚”三段，每段开头用一张手写便签定格两秒。这种结构让12分钟的片子有了三个入口，弹幕在第6分钟出现集中讨论。</p>
+          <div class="meta"><span>10月28日</span><span>时长 12:05</span><span>B站</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="block" id="latest" aria-labelledby="hLatest">
+      <div class="block-head">
+        <h2 id="hLatest">最新更新：近十日条目变动</h2>
+        <span class="sub">只记有明确时间戳的改动</span>
+      </div>
+      <ul class="tight-list">
+        <li><span class="t">11月7日</span><a href="/#featured">新增《一分钟生活切片》第12期拆解，补入第52秒视线引导说明</a><span class="src">条目：切片第12期</span></li>
+        <li><span class="t">11月6日</span><a href="/#deep">深度解析补充“三秒判断法”的对照表，替换原有一段模糊表述</a><span class="src">条目：完播率判断</span></li>
+        <li><span class="t">11月5日</span><a href="/#guide">剪辑模板页新增6个定点记录预设工程，标注适用素材时长</a><span class="src">条目：模板库</span></li>
+        <li><span class="t">11月4日</span><a href="/#featured">收录“小满的房间”出租屋布光方案，附灯位草图</a><span class="src">条目：布光方案</span></li>
+        <li><span class="t">11月3日</span><a href="/#featured">更新通勤vlog转场对比，补入完播率两个数值</a><span class="src">条目：转场对比</span></li>
+        <li><span class="t">11月1日</span><a href="/#comments">新增用户评论 6 条，其中 3 条指向具体视频条目</a><span class="src">条目：评论区</span></li>
+        <li><span class="t">10月31日</span><a href="/#featured">收录菜市场麦克风实测，标注环境噪音约72分贝</a><span class="src">条目：麦克风实测</span></li>
+        <li><span class="t">10月28日</span><a href="/#deep">搬家vlog三段时间线结构加入解析，注明弹幕集中位置</a><span class="src">条目：叙事结构</span></li>
+      </ul>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="block" id="channels" aria-labelledby="hChannels">
+      <div class="block-head">
+        <h2 id="hChannels">分类入口：按你正在解决的事找</h2>
+        <span class="sub">括号内为当前条目数</span>
+      </div>
+      <div class="tag-index">
+        <a href="/#featured">早餐记录vlog <small>9</small></a>
+        <a href="/#featured">通勤路上拍摄 <small>7</small></a>
+        <a href="/#guide">手机剪辑入门 <small>14</small></a>
+        <a href="/#featured">出租屋布光 <small>6</small></a>
+        <a href="/#guide">领夹麦选购 <small>5</small></a>
+        <a href="/#deep">完播率分析 <small>8</small></a>
+        <a href="/#featured">旅行一日记录 <small>11</small></a>
+        <a href="/#deep">日更节奏安排 <small>6</small></a>
+        <a href="/#latest">封面字体测试 <small>4</small></a>
+        <a href="/#guide">素材整理归档 <small>7</small></a>
+        <a href="/#featured">手写便签叙事 <small>3</small></a>
+      </div>
+    </section>
+
+    <!-- 深度解析（唯一主体阅读区） -->
+    <section class="block" id="deep" aria-labelledby="hDeep">
+      <div class="block-head">
+        <h2 id="hDeep">深度解析：日更不一定涨粉，但能压缩试错周期</h2>
+        <span class="sub">一个可以被引用、也可以被反驳的判断</span>
+      </div>
+      <article class="deep">
+        <p>先给结论：对镜头感尚未稳定的创作者，连续14天日更带来的能力提升，通常大于单条视频做两周精修。这个判断有边界——它适用于把视频日记当长期习惯的人，不适用于接商单为主要收入的账号。下面拆成三段可核对的部分。</p>
+
+        <div class="claim">
+          <strong>判断一：</strong>前14条视频的主要价值是暴露问题，不是积累粉丝。依据是“阿朴的记录本”公布的30天数据：第1周播放中位数1180，第2周640，第3周2100——中间那次下滑恰好发生在她换封面字体之后，说明单条数据波动很难归因到内容质量。
+        </div>
+
+        <h3>案例时间线：三条视频的剪辑耗时变化</h3>
+        <p>“梅子汽水”在10月26日至11月6日之间发了三条定点记录，我给它们排了时间线。10月26日那条3分12秒，素材时长104分钟，成片比素材约1:33；10月31日那条2分48秒，素材71分钟，比例1:25；11月6日那条2分30秒，素材52分钟，比例1:21。素材量在下降，成片时长只少了42秒，说明她剪掉的冗余变少了，而不是拍得更少。</p>
+        <table class="cmp-table">
+          <caption>三条定点记录的素材与成片对照（数据来自视频简介自述）</caption>
+          <thead>
+            <tr><th>发布日期</th><th>素材时长</th><th>成片时长</th><th>比例</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>10月26日</td><td>104 分钟</td><td>3:12</td><td>1 : 33</td></tr>
+            <tr><td>10月31日</td><td>71 分钟</td><td>2:48</td><td>1 : 25</td></tr>
+            <tr><td>11月6日</td><td>52 分钟</td><td>2:30</td><td>1 : 21</td></tr>
+          </tbody>
+        </table>
+
+        <h3>数据对比：日更与周更的两组公开数字</h3>
+        <p>拿两个不同量级的账号比，结论会打架。抖音“早八人小林”10月20日至11月2日保持日更，粉丝从1.2万涨到1.6万，平均播放3100；B站“小满的房间”同期周更，粉丝从3.1万涨到3.3万，平均播放1.1万。前者涨粉比例更高，后者单条播放更高。两组数字说明的是：日更擅长拉新，周更擅长沉淀。把这两个目标混在一句“日更涨粉”里，就不准确了。</p>
+
+        <h3>说法差异：关于“前3秒”的两种解释</h3>
+        <p>主流教程说前3秒必须抛出悬念，否则划走。另一种说法来自剪辑师“老陈”10月31日的视频：生活记录类内容的前3秒只要给出“场景可辨认”，观众就会留。他举的例子是菜市场镜头，开头两秒没有人物，只有招牌和叫卖，完播率反而比有悬念字幕的版本高11个百分点。两种说法不矛盾，前者针对信息类内容，后者针对氛围类内容。把它当成一条铁律去套所有视频，就会得出错误结论。</p>
+
+        <h3>规则前后变化：模板库这次改了什么</h3>
+        <p>11月5日的模板更新里，原先给“全天候记录”的一份工程被拆成两份，分别标注“素材60分钟以内”和“素材60分钟以上”。改动原因是后台反馈显示，超过九成用户导入90分钟以上素材后直接放弃。这不是内容判断，是工具可用性判断——拆分降低的是入口门槛，不改变拍法本身。核对方式很简单：打开模板库对比10月版本和11月版本的文件数，从9个变成14个。</p>
+
+        <p>最后留一个可反驳的点：如果创作者已经有稳定的镜头感和固定的观众群，日更带来的边际收益会迅速下降，“早八人小林”在11月1日的动态里也承认，第12天之后每条视频的准备时间已经从40分钟涨到90分钟。到这个阶段，减少频率、提高单条完成度更划算。</p>
+      </article>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="block" id="guide" aria-labelledby="hGuide">
+      <div class="block-head">
+        <h2 id="hGuide">体验指南：从按下录制到发布四个步骤</h2>
+        <span class="sub">以一条2分钟定点记录为例</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>定场景与机位</h3>
+          <p>选每天必经的一个位置，桌面、灶台或玄关。手机横置，镜头与桌面成30到45度，画面里留出人物的手部活动区。机位固定后一周内不再更换，观众靠画面认人。</p>
+        </div>
+        <div class="step">
+          <h3>录10到20分钟素材</h3>
+          <p>开启飞行模式，避免通知打断。建议同时录一条环境声，之后剪辑时用来补空隙。素材超过30分钟后先存原始文件，再决定删哪段，10月29日有人因误删重拍了一整天。</p>
+        </div>
+        <div class="step">
+          <h3>剪到2分钟以内</h3>
+          <p>按“动作完成”切，不按时间等分。每个动作保留起手和收尾，中间过程压缩。语速正常时，2分钟大约容纳4到6个动作，动作太多会变成流水账。</p>
+        </div>
+        <div class="step">
+          <h3>发布前检查三项</h3>
+          <p>封面是否看得清场景；前3秒是否有可辨认的声音或画面；标题是否写明了具体动作。三项都过再点发布，比发出去反复改更省事。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="block" id="faq" aria-labelledby="hFaq">
+      <div class="block-head">
+        <h2 id="hFaq">常见问题：拍摄与发布的十个具体疑问</h2>
+        <span class="sub">答案以领域做法为主语</span>
+      </div>
+      <details>
+        <summary>手机拍视频日记需要稳定器吗？</summary>
+        <div class="ans">固定机位拍摄时不需要。把手机放在书堆或杯子上也能稳住，关键是拍摄期间不要碰桌面。需要走动跟拍时，稳定器才有明显收益，手持加身体缓冲在短距离内也够用。</div>
+      </details>
+      <details>
+        <summary>定点记录每天拍同一个场景会不会腻？</summary>
+        <div class="ans">场景固定不代表内容固定。早餐记录里每天的食物、天气、桌面物件都在变，观众看的是变化中的熟悉感。连续拍摄超过三周后，可以每周换一次机位角度，保持新鲜度。</div>
+      </details>
+      <details>
+        <summary>2分钟的视频要拍多少素材才够？</summary>
+        <div class="ans">按1:25的比例，素材50分钟左右比较从容。素材太短会缺少可切的动作，太长则整理成本高。如果当天只录了10分钟，可以做成60秒的事件切片，不必硬撑2分钟。</div>
+      </details>
+      <details>
+        <summary>领夹麦和手机自带收音差多少？</summary>
+        <div class="ans">安静室内差距有限，室外差距明显。菜市场、地铁、街道这类环境噪音超过70分贝的地方，领夹麦能让人声清晰度提升一个档次。室内桌面记录，手机放在离嘴30厘米内也够用。</div>
+      </details>
+      <details>
+        <summary>视频日记的标题该怎么写？</summary>
+        <div class="ans">写具体动作和对象，比如“周三早晨煎了两个蛋”，比“记录美好生活”更容易被搜到。标题里的名词越具体，匹配的搜索词越多，也越容易被同类内容推荐。</div>
+      </details>
+      <details>
+        <summary>完播率低一定是内容不好吗？</summary>
+        <div class="ans">不一定是内容问题。发布时间、封面信息量、平台流量池都会影响完播率。同一视频在晚上8点和凌晨1点发布，数据可能差一倍。判断内容质量要看多条的均值，不看单条。</div>
+      </details>
+      <details>
+        <summary>用手机剪辑软件够用吗？</summary>
+        <div class="ans">2分钟以内的定点记录，手机剪辑完全够。需要多轨道音频、精确到帧的转场时，才考虑电脑软件。很多日更账号至今用手机剪，11月的模板库也有手机版工程。</div>
+      </details>
+      <details>
+        <summary>素材怎么归档才不丢？</summary>
+        <div class="ans">按“年-月-日-场景”建文件夹，原始素材和成片分开存。每周日把当周素材复制到第二块硬盘，云端只存成片。命名保持统一，之后找某天的镜头不用逐个点开。</div>
+      </details>
+      <details>
+        <summary>日更中断了需要补吗？</summary>
+        <div class="ans">不需要补。观众在意的是内容连续性，不是日历连续性。断更三天后恢复，写明原因即可。强行补更会让后续几天的素材质量下降，反而得不偿失。</div>
+      </details>
+      <details>
+        <summary>视频日记适合发布在哪个平台？</summary>
+        <div class="ans">按内容形态分。竖屏短切片适合抖音和小红书，横屏完整记录适合B站。同一素材可以剪两个比例分发，但标题和封面要分别调整，直接搬运会影响推荐。</div>
+      </details>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="block" id="comments" aria-labelledby="hComments">
+      <div class="block-head">
+        <h2 id="hComments">用户评论：来自拍摄现场的反馈</h2>
+        <span class="sub">含正面、中性与会挑刺的声音</span>
+      </div>
+      <div class="comments">
+        <div class="comment">
+          <div class="who"><span class="avatar">L</span><div><b>李子树下</b><br><span>11月7日</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>照着第12期早餐桌的俯拍机位试了三天，确实比之前的正脸视角好剪。锅铲声很清楚，不用再配背景音乐。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">阿</span><div><b>阿朴的记录本</b><br><span>11月5日</span></div></div>
+          <p>30天数据那张图被人转去别处了，原图里第2周下滑的时间点和换封面是同一天，但我不确定是因果还是巧合，自己也在复盘。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">通</span><div><b>通勤第三站</b><br><span>11月4日</span></div></div>
+          <div class="stars">★★★☆☆</div>
+          <p>《早八人小林》那期长镜头版确实好看，但评论区说“像自己坐过一次”有点夸张。地铁报站声谁录都差不多，关键是他那天刚好坐到了靠窗位置。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">录</span><div><b>录音师老陈</b><br><span>11月3日</span></div></div>
+          <p>菜市场那期我补一句：249元那款在15厘米内最好，但穿厚外套时摩擦声明显。测试没做衣服噪音，这点应该标出来。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">小</span><div><b>小满的房间</b><br><span>11月2日</span></div></div>
+          <div class="stars">★★★★★</div>
+          <p>台灯加白纸的办法用了两周，晚上拍书桌够亮。提醒一下白纸离灯太近会发黄，20厘米是上限，再近色温就偏了。</p>
+        </div>
+        <div class="comment">
+          <div class="who"><span class="avatar">周</span><div><b>周末不加班</b><br><span>11月1日</span></div></div>
+          <div class="stars">★★☆☆☆</div>
+          <p>日更30天那篇看得我焦虑。她第一周播放1180，我发了五条最高才300。后来想想账号基础不一样，不能被这组数字带着走。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="block" id="news" aria-labelledby="hNews">
+      <div class="block-head">
+        <h2 id="hNews">相关资讯：平台与工具侧的几条动态</h2>
+        <span class="sub">时间集中在10月下旬到11月初</span>
+      </div>
+      <div class="grid g2">
+        <div class="card">
+          <h3>11月6日 剪辑软件更新多轨道音频混合</h3>
+          <p>移动端剪辑应用发布新版本，支持三条音频轨道分别调节音量。对同时录环境声和人声的视频日记来说，这个改动减少了一次导出到电脑的步骤。版本号为当日推送，旧工程需手动升级格式。</p>
+        </div>
+        <div class="card">
+          <h3>11月2日 某平台调整横屏内容推荐权重</h3>
+          <p>平台创作者中心公告提到，横屏内容的推荐将更多参考完播率而非点击率。对做完整记录的账号是利好，对依赖封面的短切片影响有限。公告没有给出具体调整比例。</p>
+        </div>
+        <div class="card">
+          <h3>10月30日 手机厂商开放外接麦克风原生支持</h3>
+          <p>部分机型系统更新后，可直接识别USB-C领夹麦，无需第三方应用。实测延迟从180毫秒降到60毫秒左右，对口型对齐更省事。老机型暂未覆盖。</p>
+        </div>
+        <div class="card">
+          <h3>10月27日 视频日记话题在社交平台累计播放破亿</h3>
+          <p>话题页显示累计播放量过亿，参与者以学生和上班族为主。热门视频集中在早餐、通勤和书桌三个场景，单条时长多在90秒以内。数据可在话题页公开查看。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 榜单 + 相关推荐 -->
+    <section class="block" id="ranking" aria-labelledby="hRank">
+      <div class="block-head">
+        <h2 id="hRank">榜单与相关推荐：按不同维度挑选</h2>
+        <span class="sub">榜单依据公开数据与观看反馈整理</span>
+      </div>
+      <div class="rank">
+        <div class="rank-card">
+          <h3>播放完成度榜</h3>
+          <ol>
+            <li><strong>通勤长镜头版</strong> 完播34%</li>
+            <li><strong>搬家三段时间线</strong> 完播29%</li>
+            <li><strong>早餐桌固定机位</strong> 完播27%</li>
+            <li><strong>菜市场麦克风实测</strong> 完播24%</li>
+          </ol>
+        </div>
+        <div class="rank-card">
+          <h3>可复刻度榜</h3>
+          <ol>
+            <li><strong>台灯加白纸布光</strong> 零成本</li>
+            <li><strong>书桌定点记录模板</strong> 有工程文件</li>
+            <li><strong>手机剪辑入门四步</strong> 附截图</li>
+            <li><strong>素材归档命名法</strong> 可当天照做</li>
+          </ol>
+        </div>
+        <div class="rank-card">
+          <h3>争议讨论榜</h3>
+          <ol>
+            <li><strong>日更是否真的涨粉</strong> 两组数据打架</li>
+            <li><strong>前3秒要不要设悬念</strong> 两种说法并存</li>
+            <li><strong>完播率归因</strong> 单条数据不可靠</li>
+            <li><strong>领夹麦测试缺项</strong> 未计衣物噪音</li>
+          </ol>
+        </div>
+      </div>
+      <div style="margin-top:26px">
+        <h3>相关推荐标签</h3>
+        <div class="rec-tags">
+          <a href="/#deep">日更试错周期</a>
+          <a href="/#guide">手机剪辑入门</a>
+          <a href="/#featured">早餐记录vlog</a>
+          <a href="/#featured">出租屋布光</a>
+          <a href="/#deep">完播率分析</a>
+          <a href="/#guide">素材整理归档</a>
+          <a href="/#featured">通勤路上拍摄</a>
+          <a href="/#faq">领夹麦选购</a>
+          <a href="/#featured">手写便签叙事</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 补充：创作者证言时间线 -->
+    <section class="block" id="voices" aria-labelledby="hVoices">
+      <div class="block-head">
+        <h2 id="hVoices">创作者证言时间线：十天内听到的六句话</h2>
+        <span class="sub">原话摘录，标注来源与日期</span>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><time>11月7日 · 梅子汽水</time><p>“俯拍机位最难的是手要一直控制在框里，第三天我才找到合适的落点。”</p></div>
+        <div class="tl-item"><time>11月5日 · 阿朴的记录本</time><p>“连续更新最累的不是拍，是每天想标题，我后来改成固定模板填空。”</p></div>
+        <div class="tl-item"><time>11月4日 · 小满的房间</time><p>“白纸柔光省钱，但只适合小范围，拍全身还是得靠窗。”</p></div>
+        <div class="tl-item"><time>11月2日 · 早八人小林</time><p>“长镜头版本拍了两遍，第一遍地铁太挤，机器被碰歪了。”</p></div>
+        <div class="tl-item"><time>10月31日 · 录音师老陈</time><p>“测试条件写清楚比结论重要，不然别人照做会失望。”</p></div>
+        <div class="tl-item"><time>10月28日 · 梅子汽水</time><p>“搬家那条剪完才发现，三段里最受欢迎的是打包那段，没人看新家。”</p></div>
+      </div>
+    </section>
+
+    <!-- 搜索无结果提示与布局侧栏 -->
+    <div id="searchNoResult" class="no-result" role="status">
+      没有找到匹配的条目。可以试试“布光”“通勤”“完播率”“素材归档”这类具体词，或者直接浏览上方分类入口。
+    </div>
+    <div id="searchResults" aria-live="polite"></div>
+
+  </div>
+</main>
+
+<div class="wrap sidebar-mobile side-wrap">
+  <aside class="sidebar" aria-label="栏目导航">
+    <h2>栏目导航</h2>
+    <ul class="side-nav">
+      <li><a href="/#overview">领域概览</a></li>
+      <li><a href="/#featured">精选内容推荐</a></li>
+      <li><a href="/#latest">最新更新</a></li>
+      <li><a href="/#channels">分类入口</a></li>
+      <li><a href="/#deep">深度解析</a></li>
+      <li><a href="/#guide">体验指南</a></li>
+      <li><a href="/#faq">常见问题</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">相关资讯</a></li>
+      <li><a href="/#ranking">榜单与推荐</a></li>
+      <li><a href="/#voices">创作者证言</a></li>
+    </ul>
+    <div class="side-note">核对日：2026年11月8日。正文中所有日期均在该日之前30天内，数据以视频简介与后台截图为准。</div>
+  </aside>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-brand">
+        <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#f2a63b"/>
+          <circle cx="32" cy="30" r="15" fill="#fff4dc"/>
+          <circle cx="32" cy="30" r="7" fill="#c8561b"/>
+          <path d="M29 25.5l9 4.5-9 4.5z" fill="#fff4dc"/>
+        </svg>
+        <span>溏心vlog网页版</span>
+      </div>
+      <p class="foot-note">把日常拍成可回看的片段，记录方法与时长取舍的参考站。</p>
+    </div>
+    <div>
+      <h3>内容栏目</h3>
+      <ul>
+        <li><a href="/#overview">领域概览</a></li>
+        <li><a href="/#featured">精选内容推荐</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#voices">创作者证言</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>实用频道</h3>
+      <ul>
+        <li><a href="/#guide">体验指南</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+        <li><a href="/#channels">分类入口</a></li>
+        <li><a href="/#ranking">榜单与推荐</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>关于内容</h3>
+      <ul>
+        <li><a href="/#latest">最新更新</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">相关资讯</a></li>
+      </ul>
+      <p class="foot-note" style="margin-top:10px">示例数据说明：文中账号名、视频标题与数值为垂类示例，用于说明方法，不构成对真实账号的背书。</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 溏心vlog网页版 · 内容整理与示例数据</span>
+    <span>更新时间 2026-11-08，对应正文更新项：11月7日第12期拆解、11月5日模板库扩充</span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部" title="回到顶部">↑</button>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  var mainNav = document.getElementById('mainNav');
+  var searchBox = document.getElementById('searchBox');
+
+  menuBtn.addEventListener('click', function(){
+    var open = mainNav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(open){ searchBox.classList.add('open'); }
+    else { searchBox.classList.remove('open'); }
+  });
+
+  // 移动端点击导航项后收起
+  mainNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(window.innerWidth <= 640){
+        mainNav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        searchBox.classList.remove('open');
+      }
+    });
+  });
+
+  // 搜索
+  var input = document.getElementById('siteSearch');
+  var btn = document.getElementById('searchBtn');
+  var feedback = document.getElementById('searchFeedback');
+  var noResult = document.getElementById('searchNoResult');
+  var results = document.getElementById('searchResults');
+
+  var items = [];
+  document.querySelectorAll('main h2, main h3, main summary, main p, main li, main .card, main .comment').forEach(function(el){
+    var text = el.textContent.replace(/\s+/g,' ').trim();
+    if(text.length < 4) return;
+    var target = el.closest('section[id]') || el.closest('[id]');
+    items.push({text:text, el:el, id: target ? target.id : ''});
+  });
+
+  function doSearch(){
+    var q = input.value.trim();
+    results.innerHTML = '';
+    if(!q){
+      feedback.classList.remove('show');
+      noResult.classList.remove('show');
+      return;
+    }
+    var hit = items.filter(function(it){ return it.text.indexOf(q) !== -1; });
+    // 去重：同一元素只保留一次
+    var seen = new Set();
+    var uniq = [];
+    hit.forEach(function(it){
+      var key = it.text.slice(0,40) + it.id;
+      if(seen.has(key)) return;
+      seen.add(key);
+      uniq.push(it);
+    });
+    feedback.classList.add('show');
+    if(uniq.length === 0){
+      noResult.classList.add('show');
+      feedback.textContent = '“' + q + '” 没有匹配结果。';
+      return;
+    }
+    noResult.classList.remove('show');
+    feedback.textContent = '“' + q + '” 找到 ' + uniq.length + ' 处相关内容，以下为前 6 条。';
+    var ul = document.createElement('ul');
+    ul.className = 'tight-list';
+    uniq.slice(0,6).forEach(function(it){
+      var li = document.createElement('li');
+      li.style.listStyle = 'none';
+      var a = document.createElement('a');
+      a.href = '/#' + (it.id || 'top');
+      var t = it.text.length > 62 ? it.text.slice(0,62) + '…' : it.text;
+      a.textContent = t;
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+    results.appendChild(ul);
+  }
+
+  btn.addEventListener('click', doSearch);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 500){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 侧栏滚动高亮
+  var sideLinks = document.querySelectorAll('.side-nav a');
+  var sections = [];
+  sideLinks.forEach(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    var sec = document.getElementById(id);
+    if(sec) sections.push({id:id, sec:sec, link:a});
+  });
+  function highlight(){
+    var pos = window.scrollY + 170;
+    var current = null;
+    sections.forEach(function(s){
+      if(s.sec.offsetTop <= pos) current = s;
+    });
+    sideLinks.forEach(function(a){ a.classList.remove('active'); });
+    if(current) current.link.classList.add('active');
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "溏心vlog网页版",
+  "inLanguage": "zh-CN",
+  "description": "视频日记与生活记录的实用参考站，整理拍摄、剪辑、账号运营的方法与公开数据。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "手机拍视频日记需要稳定器吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "固定机位拍摄时不需要，把手机放在书堆或杯子上也能稳住。需要走动跟拍时稳定器才有明显收益。"}
+    },
+    {
+      "@type": "Question",
+      "name": "2分钟的视频要拍多少素材才够？",
+      "acceptedAnswer": {"@type": "Answer", "text": "按1:25的比例，素材50分钟左右比较从容。素材太短缺少可切的动作，太长则整理成本高。"}
+    },
+    {
+      "@type": "Question",
+      "name": "领夹麦和手机自带收音差多少？",
+      "acceptedAnswer": {"@type": "Answer", "text": "安静室内差距有限，室外差距明显。环境噪音超过70分贝的地方，领夹麦能让人声清晰度明显提升。"}
+    },
+    {
+      "@type": "Question",
+      "name": "完播率低一定是内容不好吗？",
+      "acceptedAnswer": {"@type": "Answer", "text": "不一定是内容问题。发布时间、封面信息量、平台流量池都会影响完播率，判断内容质量应看多条视频的均值。"}
+    }
+  ]
+}
+</script>
+</body>
+    </html>
