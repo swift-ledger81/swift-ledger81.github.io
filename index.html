@@ -1,0 +1,1135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>青娱乐最新官网网址-访问指引与平台功能解析</title>
+<meta name="description" content="青娱乐最新官网网址访问指引，梳理平台频道结构、账号安全、客户端差异与常见访问问题，整理2026年11月的实测记录、用户反馈与判断清单，帮助读者核对入口真伪并选择稳妥的访问方式。">
+<meta name="keywords" content="青娱乐最新官网网址">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f4c46'/%3E%3Cpath d='M20 42c6-16 18-22 24-24-2 8-2 18-8 24-5 5-12 4-16 0z' fill='%23f2b53a'/%3E%3Ccircle cx='26' cy='26' r='3' fill='%23f7f3e8'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1c2422;
+  --ink-soft:#4a5652;
+  --paper:#f7f4ec;
+  --paper-2:#efe9db;
+  --card:#ffffff;
+  --brand:#0f4c46;
+  --brand-2:#14655c;
+  --accent:#c98a12;
+  --accent-soft:#f6e3bc;
+  --line:#ddd6c6;
+  --line-strong:#c6bca8;
+  --ok:#2e7d52;
+  --warn:#a8481f;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 6px rgba(28,36,34,.06),0 10px 26px rgba(28,36,34,.05);
+  --shadow-hover:0 4px 10px rgba(28,36,34,.09),0 14px 32px rgba(28,36,34,.08);
+  --fs-h1:clamp(1.7rem,4.4vw,2.65rem);
+  --fs-h2:clamp(1.28rem,2.6vw,1.62rem);
+  --fs-h3:1.06rem;
+  --fs-body:1rem;
+  --fs-sm:.875rem;
+  --fs-xs:.78rem;
+  --gap:1rem;
+  --stick:104px;
+  --font:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--stick)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  margin:0;font-family:var(--font);font-size:var(--fs-body);line-height:1.75;
+  color:var(--ink);background:var(--paper);
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ---------- sticky stack ---------- */
+.sticky-stack{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:var(--brand);color:#eef6f2;font-size:var(--fs-sm);
+  padding:.5rem 1rem;
+}
+.notice-inner{
+  max-width:1160px;margin:0 auto;display:flex;gap:.6rem;align-items:center;
+  flex-wrap:wrap;
+}
+.notice-tag{
+  background:var(--accent);color:#241a03;font-weight:700;font-size:var(--fs-xs);
+  padding:.1rem .5rem;border-radius:999px;letter-spacing:.02em;flex:none;
+}
+.notice-inner p{margin:0;line-height:1.5}
+.site-header{
+  background:rgba(247,244,236,.94);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:1160px;margin:0 auto;padding:.6rem 1rem;
+  display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:.55rem;flex:none}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{font-weight:800;font-size:1.04rem;color:var(--brand);letter-spacing:.01em;line-height:1.2}
+.brand-text small{display:block;font-weight:500;font-size:var(--fs-xs);color:var(--ink-soft);letter-spacing:.04em}
+.main-nav{flex:1 1 auto;min-width:0}
+.nav-toggle{
+  display:none;align-items:center;gap:.4rem;background:var(--card);
+  border:1px solid var(--line-strong);border-radius:var(--radius-sm);
+  padding:.4rem .7rem;font:inherit;font-size:var(--fs-sm);color:var(--ink);cursor:pointer;
+}
+.nav-toggle svg{width:16px;height:16px}
+.nav-list{
+  list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.1rem .2rem;
+}
+.nav-list a{
+  display:block;padding:.35rem .55rem;border-radius:var(--radius-sm);
+  color:var(--ink-soft);font-size:var(--fs-sm);white-space:nowrap;
+}
+.nav-list a:hover{background:var(--paper-2);color:var(--brand);text-decoration:none}
+.nav-list a.active{background:var(--brand);color:#f2f7f4}
+.header-tools{display:flex;align-items:center;gap:.5rem;flex:none}
+.search-form{display:flex;align-items:center;gap:.35rem}
+.search-form input{
+  font:inherit;font-size:var(--fs-sm);padding:.36rem .6rem;width:150px;
+  border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--card);color:var(--ink);
+}
+.search-form button{
+  font:inherit;font-size:var(--fs-sm);padding:.36rem .7rem;cursor:pointer;
+  border:1px solid var(--brand);background:var(--brand);color:#f2f7f4;border-radius:var(--radius-sm);
+}
+.search-result{
+  max-width:1160px;margin:0 auto;padding:0 1rem .6rem;font-size:var(--fs-sm);color:var(--warn);
+}
+.search-result:empty{display:none}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 380px at 88% -10%,rgba(201,138,18,.22),transparent 62%),
+    linear-gradient(160deg,#0f4c46 0%,#123b36 58%,#16302c 100%);
+  color:#eef4f0;
+}
+.hero-inner{
+  max-width:1160px;margin:0 auto;padding:2.4rem 1rem 2.1rem;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:2rem;align-items:center;
+}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:.45rem;font-size:var(--fs-xs);
+  background:rgba(242,181,58,.16);border:1px solid rgba(242,181,58,.45);
+  color:#f6dfae;padding:.18rem .6rem;border-radius:999px;margin:0 0 .9rem;
+  letter-spacing:.04em;
+}
+.hero h1{
+  font-size:var(--fs-h1);line-height:1.24;margin:0 0 .8rem;letter-spacing:.01em;
+  color:#fdfcf7;
+}
+.hero-desc{margin:0 0 1.2rem;color:#d4e2db;max-width:36em;font-size:1.02rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.3rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.4rem;font-size:var(--fs-sm);font-weight:600;
+  padding:.55rem 1rem;border-radius:var(--radius-sm);border:1px solid transparent;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#241a03;box-shadow:0 3px 10px rgba(201,138,18,.3)}
+.btn-primary:hover{background:#d99a1d}
+.btn-ghost{border-color:rgba(238,244,240,.45);color:#eef4f0}
+.btn-ghost:hover{background:rgba(238,244,240,.1)}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:.9rem 1.6rem;margin:0;padding:0;list-style:none;
+  font-size:var(--fs-sm);color:#c8dad2;
+}
+.hero-facts strong{display:block;font-size:1.25rem;color:#f6dfae;font-weight:700;line-height:1.3}
+/* hero visual */
+.hero-visual{position:relative;min-height:230px}
+.hero-visual svg{width:100%;height:auto;display:block}
+@media (max-width:820px){
+  .hero-inner{grid-template-columns:1fr;padding:1.8rem 1rem 1.6rem;gap:1.2rem}
+  .hero-visual{order:-1;min-height:0;max-width:420px}
+}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1160px;margin:0 auto;padding:0 1rem}
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:1.8rem;
+  padding:2rem 0 2.6rem;align-items:start;
+}
+main{min-width:0}
+.sidebar{min-width:0;display:flex;flex-direction:column;gap:1.1rem;position:sticky;top:calc(var(--stick) + 12px)}
+@media (max-width:960px){
+  .layout{grid-template-columns:1fr;gap:1.4rem}
+  .sidebar{position:static;order:2}
+  main{order:1}
+}
+
+/* ---------- sections ---------- */
+.section{margin:0 0 1.9rem;scroll-margin-top:var(--stick)}
+.section-head{margin:0 0 1rem}
+.section-head h2{
+  font-size:var(--fs-h2);margin:0 0 .3rem;line-height:1.35;color:var(--brand);
+  display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;
+}
+.section-head h2::before{
+  content:"";width:6px;height:1.05em;background:var(--accent);border-radius:3px;flex:none;
+}
+.section-head p{margin:0;color:var(--ink-soft);font-size:var(--fs-sm);max-width:48em}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.pad{padding:1.1rem 1.15rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+@media (max-width:760px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+/* overview */
+.overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+@media (max-width:760px){.overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ov-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.ov-card h3{margin:.1rem 0 .4rem;font-size:1rem;color:var(--brand)}
+.ov-card p{margin:0;font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.65}
+.ov-num{font-size:1.5rem;font-weight:800;color:var(--accent);line-height:1.1}
+
+/* featured cards */
+.feat-card{overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.feat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.feat-card img{width:100%;height:150px;object-fit:cover}
+.feat-card .body{padding:.85rem 1rem 1rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.feat-card h3{margin:0;font-size:1rem;line-height:1.45}
+.feat-card p{margin:0;font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.65}
+.meta{font-size:var(--fs-xs);color:var(--ink-soft);display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+.tag{
+  display:inline-block;font-size:var(--fs-xs);padding:.08rem .5rem;border-radius:999px;
+  background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line);line-height:1.6;
+}
+.tag-accent{background:var(--accent-soft);border-color:#e5c98d;color:#6b4a06}
+
+/* compact list */
+.list-compact{list-style:none;margin:0;padding:0}
+.list-compact li{
+  padding:.72rem .2rem;border-bottom:1px dashed var(--line);display:flex;gap:.8rem;align-items:baseline;
+}
+.list-compact li:last-child{border-bottom:0}
+.list-compact time{font-size:var(--fs-xs);color:var(--ink-soft);flex:none;width:64px;font-variant-numeric:tabular-nums}
+.list-compact a{font-size:.95rem}
+.list-compact .brief{font-size:var(--fs-sm);color:var(--ink-soft);display:block;margin-top:.1rem}
+
+/* channel index */
+.channel-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem}
+@media (max-width:900px){.channel-index{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.channel-index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.channel-index a{
+  display:flex;justify-content:space-between;align-items:center;gap:.4rem;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.55rem .7rem;font-size:var(--fs-sm);color:var(--ink);
+  transition:border-color .18s ease,background .18s ease,transform .18s ease;
+}
+.channel-index a:hover{border-color:var(--brand);background:#f2f7f4;text-decoration:none;transform:translateY(-2px)}
+.channel-index a em{font-style:normal;font-size:var(--fs-xs);color:var(--ink-soft)}
+
+/* deep analysis */
+.article-body p{margin:0 0 .95rem}
+.article-body h3{font-size:var(--fs-h3);margin:1.4rem 0 .55rem;color:var(--brand)}
+.article-body ul,.article-body ol{margin:0 0 1rem;padding-left:1.35rem}
+.article-body li{margin:.28rem 0}
+.callout{
+  border-left:4px solid var(--accent);background:#fdf7e9;border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  padding:.8rem 1rem;margin:0 0 1rem;font-size:.95rem;
+}
+.callout strong{color:#6b4a06}
+.compare{width:100%;border-collapse:collapse;font-size:var(--fs-sm);margin:0 0 1rem}
+.compare caption{text-align:left;font-size:var(--fs-xs);color:var(--ink-soft);padding-bottom:.35rem}
+.compare th,.compare td{border:1px solid var(--line);padding:.5rem .6rem;vertical-align:top;text-align:left}
+.compare th{background:var(--paper-2);font-weight:600;color:var(--brand)}
+.checklist{list-style:none;margin:0 0 1rem;padding:0;display:grid;gap:.45rem}
+.checklist li{
+  display:flex;gap:.55rem;font-size:var(--fs-sm);background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:.5rem .7rem;
+}
+.checklist li::before{content:"✓";color:var(--ok);font-weight:700;flex:none}
+
+/* guide steps */
+.steps{counter-reset:step;list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.steps li{
+  counter-increment:step;position:relative;padding:.75rem .9rem .75rem 2.9rem;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:.95rem;
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:.75rem;top:.7rem;
+  width:1.55rem;height:1.55rem;border-radius:50%;background:var(--brand);color:#f2f7f4;
+  font-size:var(--fs-sm);font-weight:700;display:grid;place-items:center;
+}
+
+/* FAQ */
+details.faq{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:.65rem .85rem;margin:0 0 .55rem;
+}
+details.faq summary{
+  cursor:pointer;font-weight:600;font-size:.96rem;color:var(--ink);list-style:none;
+  display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"＋";color:var(--accent);font-weight:700;flex:none}
+details.faq[open] summary::after{content:"－"}
+details.faq p{margin:.6rem 0 .1rem;font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.7}
+
+/* comments */
+.comment{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:.8rem .9rem;display:flex;gap:.7rem}
+.avatar{
+  width:34px;height:34px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:var(--fs-xs);font-weight:700;color:#f2f7f4;background:var(--brand-2);
+}
+.avatar.alt{background:#8a5a18}
+.avatar.alt2{background:#3d6b8f}
+.comment .c-body{min-width:0}
+.comment .c-name{font-size:var(--fs-sm);font-weight:700;margin:0 0 .1rem}
+.comment .c-name span{font-weight:400;color:var(--ink-soft);font-size:var(--fs-xs);margin-left:.4rem}
+.comment p{margin:.15rem 0 0;font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.7}
+
+/* news */
+.news-item{display:grid;grid-template-columns:76px minmax(0,1fr);gap:.8rem;padding:.8rem 0;border-bottom:1px dashed var(--line)}
+.news-item:last-child{border-bottom:0}
+.news-item time{font-size:var(--fs-xs);color:var(--ink-soft);font-variant-numeric:tabular-nums;padding-top:.18rem}
+.news-item h3{margin:0 0 .2rem;font-size:.97rem}
+.news-item p{margin:0;font-size:var(--fs-sm);color:var(--ink-soft)}
+
+/* recommendation tags */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag-cloud a{
+  background:var(--card);border:1px solid var(--line-strong);border-radius:999px;
+  padding:.28rem .8rem;font-size:var(--fs-sm);color:var(--ink);
+  transition:border-color .18s ease,color .18s ease,transform .18s ease;
+}
+.tag-cloud a:hover{border-color:var(--brand);color:var(--brand);text-decoration:none;transform:translateY(-2px)}
+
+/* timeline */
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:.15rem 0 .95rem 1.7rem}
+.timeline li::before{
+  content:"";position:absolute;left:1px;top:.45rem;width:14px;height:14px;border-radius:50%;
+  background:var(--card);border:3px solid var(--brand-2);
+}
+.timeline b{display:block;font-size:.95rem;color:var(--brand)}
+.timeline span{font-size:var(--fs-sm);color:var(--ink-soft)}
+
+/* ranking */
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:rank}
+.rank-list li{
+  counter-increment:rank;display:flex;gap:.7rem;align-items:baseline;
+  padding:.55rem 0;border-bottom:1px dashed var(--line);font-size:.95rem;
+}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{
+  content:counter(rank);flex:none;width:1.5rem;height:1.5rem;border-radius:6px;
+  background:var(--paper-2);color:var(--brand);font-weight:700;font-size:var(--fs-xs);
+  display:grid;place-items:center;border:1px solid var(--line);
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--accent);color:#241a03;border-color:var(--accent)}
+.rank-list .r-meta{font-size:var(--fs-xs);color:var(--ink-soft);display:block}
+
+/* quote */
+.quote-card{
+  border-left:4px solid var(--brand-2);background:#f2f7f4;padding:.85rem 1rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;
+  font-size:.95rem;color:var(--ink-soft);
+}
+.quote-card cite{display:block;font-style:normal;font-size:var(--fs-xs);color:var(--brand);margin-top:.35rem}
+
+/* sidebar blocks */
+.side-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:.95rem 1rem;box-shadow:var(--shadow)}
+.side-card h2{font-size:1rem;margin:0 0 .6rem;color:var(--brand);display:flex;align-items:center;gap:.4rem}
+.side-card h2::before{content:"";width:5px;height:1em;background:var(--accent);border-radius:3px}
+.side-nav{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
+.side-nav a{
+  display:block;padding:.32rem .5rem;border-radius:var(--radius-sm);color:var(--ink-soft);
+  border-left:2px solid transparent;
+}
+.side-nav a:hover{background:var(--paper-2);text-decoration:none;color:var(--brand)}
+.side-nav a.active{color:var(--brand);font-weight:700;background:#eef5f1;border-left-color:var(--accent)}
+.side-list{list-style:none;margin:0;padding:0;font-size:var(--fs-sm)}
+.side-list li{padding:.4rem 0;border-bottom:1px dashed var(--line);display:flex;flex-direction:column}
+.side-list li:last-child{border-bottom:0}
+.side-list a{color:var(--ink)}
+.side-list span{font-size:var(--fs-xs);color:var(--ink-soft)}
+
+/* footer */
+.site-footer{background:#16302c;color:#c8dad2;margin-top:1rem;padding:2rem 0 1.4rem;font-size:var(--fs-sm)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:1.6rem}
+@media (max-width:820px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.site-footer h3{color:#f6dfae;font-size:.95rem;margin:0 0 .55rem}
+.site-footer p{margin:0 0 .6rem;line-height:1.7}
+.footer-brand{display:flex;align-items:center;gap:.55rem;margin-bottom:.6rem;color:#fdfcf7;font-weight:700}
+.footer-brand svg{width:30px;height:30px}
+.footer-links{list-style:none;margin:0;padding:0;display:grid;gap:.32rem}
+.footer-links a{color:#c8dad2}
+.footer-links a:hover{color:#f6dfae}
+.footer-note{
+  border-top:1px solid rgba(200,218,210,.22);margin-top:1.6rem;padding-top:1rem;
+  font-size:var(--fs-xs);color:#9db6ab;line-height:1.7;
+}
+
+/* back to top */
+.to-top{
+  position:fixed;right:1rem;bottom:1.1rem;z-index:70;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--line-strong);
+  background:var(--card);color:var(--brand);display:grid;place-items:center;cursor:pointer;
+  box-shadow:var(--shadow-hover);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top svg{width:18px;height:18px}
+@media (max-width:600px){.to-top{right:.7rem;bottom:.7rem;width:40px;height:40px}}
+
+/* mobile nav */
+@media (max-width:860px){
+  .nav-toggle{display:inline-flex}
+  .header-tools{order:3;width:100%}
+  .search-form input{flex:1;width:auto}
+  .main-nav{order:4;width:100%;flex-basis:100%}
+  .nav-list{display:none;flex-direction:column;padding-top:.4rem}
+  .nav-list.open{display:flex}
+  .nav-list a{padding:.5rem .6rem;border-bottom:1px solid var(--line)}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-stack">
+  <div class="notice-bar">
+    <div class="notice-inner">
+      <span class="notice-tag">公告</span>
+      <p><strong>青娱乐</strong> 站点于 2026-11-07 20:00 完成线路切换，旧镜像域名已停用；访问入口核对清单同步更新到第 3 版，安卓客户端 5.7.2 于 2026-11-05 推送。</p>
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/#top" aria-label="返回首页">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#0f4c46"/>
+          <path d="M20 42c6-16 18-22 24-24-2 8-2 18-8 24-5 5-12 4-16 0z" fill="#f2b53a"/>
+          <circle cx="26" cy="26" r="3" fill="#f7f3e8"/>
+        </svg>
+        <span class="brand-text">青娱乐<small>访问指引站</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主题导航">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          栏目
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#channels">频道索引</a></li>
+          <li><a href="/#featured">精选推荐</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </nav>
+      <div class="header-tools">
+        <form class="search-form" role="search" id="searchForm" aria-label="站内搜索">
+          <input type="search" id="searchInput" name="q" placeholder="搜索频道或条目" aria-label="搜索频道或条目">
+          <button type="submit">查找</button>
+        </form>
+      </div>
+    </div>
+    <div class="search-result" id="searchResult" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<div id="top"></div>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-kicker">2026-11-08 核对版 · 入口与频道说明</p>
+      <h1 id="hero-title">青娱乐最新官网网址</h1>
+      <p class="hero-desc">围绕访问入口、频道结构与客户端差异整理的独立说明站。11 月 7 日线路切换之后，旧镜像已停用，这里按可核对的条目列出当前有效入口的判断方法、各频道内容分布，以及账号与支付环节容易踩到的坑。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#channels">查看频道索引</a>
+        <a class="btn btn-ghost" href="/#analysis">读入口判断</a>
+      </div>
+      <ul class="hero-facts">
+        <li><strong>11</strong>个内容频道</li>
+        <li><strong>3</strong>类客户端形态</li>
+        <li><strong>5.7.2</strong>安卓当前版本</li>
+        <li><strong>9</strong>条FAQ核对项</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 420 300" role="img" aria-label="入口核对示意：三条线路汇聚到同一频道面板">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#1c6b60"/><stop offset="1" stop-color="#0e3b36"/>
+          </linearGradient>
+        </defs>
+        <rect x="8" y="12" width="404" height="276" rx="18" fill="url(#g1)" stroke="#2f7a6e" stroke-width="1.5"/>
+        <g stroke="#3f8d80" stroke-width="2" stroke-dasharray="5 7" fill="none">
+          <path d="M60 60 L190 132"/>
+          <path d="M60 150 L190 150"/>
+          <path d="M60 240 L190 168"/>
+        </g>
+        <g fill="#f2b53a">
+          <circle cx="60" cy="60" r="8"/><circle cx="60" cy="150" r="8"/><circle cx="60" cy="240" r="8"/>
+        </g>
+        <rect x="190" y="92" width="196" height="116" rx="12" fill="#f7f3e8" opacity=".96"/>
+        <g fill="#0f4c46">
+          <rect x="206" y="108" width="92" height="10" rx="5"/>
+          <rect x="206" y="126" width="58" height="8" rx="4" opacity=".55"/>
+          <rect x="206" y="142" width="160" height="8" rx="4" opacity=".35"/>
+          <rect x="206" y="158" width="132" height="8" rx="4" opacity=".35"/>
+          <rect x="206" y="176" width="72" height="16" rx="8" fill="#c98a12"/>
+        </g>
+        <g font-family="sans-serif" font-size="11" fill="#cfe3db">
+          <text x="36" y="42">线路 A</text>
+          <text x="36" y="134">线路 B</text>
+          <text x="36" y="264">线路 C</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="layout">
+    <main>
+
+      <!-- 1 领域概览 -->
+      <section class="section" id="overview" aria-labelledby="h-overview">
+        <div class="section-head">
+          <h2 id="h-overview">领域概览：这个平台由哪些部分组成</h2>
+          <p>讨论访问问题之前，先要弄清对象本身。青娱乐不是单一页面，它由内容频道、账号体系、播放器与客户端三条线组成，任何一条出问题都会表现为“打不开”。</p>
+        </div>
+        <div class="overview-grid">
+          <div class="ov-card">
+            <p class="ov-num">11</p>
+            <h3>内容频道</h3>
+            <p>涵盖影视、短剧、音乐、动漫、游戏、原创、直播、资讯、综艺、纪录片、排行榜，频道页独立编号。</p>
+          </div>
+          <div class="ov-card">
+            <p class="ov-num">3</p>
+            <h3>客户端形态</h3>
+            <p>网页端、安卓 5.7.2、iOS 5.4.1。三端共用同一账号，但播放器内核不同，卡顿时先分清端。</p>
+          </div>
+          <div class="ov-card">
+            <p class="ov-num">2</p>
+            <h3>登录方式</h3>
+            <p>手机号验证码与第三方授权登录。授权登录不返回手机号，找回账号时需要额外绑定。</p>
+          </div>
+          <div class="ov-card">
+            <p class="ov-num">4</p>
+            <h3>内容形态</h3>
+            <p>长片、短剧、直播回放、图文资讯。短剧频道 10 月起改为竖屏自动连播，与其他频道操作不同。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 频道索引 -->
+      <section class="section" id="channels" aria-labelledby="h-channels">
+        <div class="section-head">
+          <h2 id="h-channels">频道索引：11 个可直接进入的内容分类</h2>
+          <p>频道名按用户实际搜索习惯命名，括号内为站内编号，便于在客服反馈时定位。编号与 11 月 7 日的线路表一致。</p>
+        </div>
+        <div class="channel-index">
+          <a href="/#featured">影视长片<em>C01</em></a>
+          <a href="/#featured">竖屏短剧<em>C02</em></a>
+          <a href="/#featured">音乐现场<em>C03</em></a>
+          <a href="/#featured">动漫新番<em>C04</em></a>
+          <a href="/#featured">游戏实况<em>C05</em></a>
+          <a href="/#featured">原创短片<em>C06</em></a>
+          <a href="/#featured">直播回放<em>C07</em></a>
+          <a href="/#featured">娱乐资讯<em>C08</em></a>
+          <a href="/#featured">综艺切片<em>C09</em></a>
+          <a href="/#featured">纪录片<em>C10</em></a>
+          <a href="/#featured">热播排行榜<em>C11</em></a>
+        </div>
+      </section>
+
+      <!-- 3 精选推荐 -->
+      <section class="section" id="featured" aria-labelledby="h-featured">
+        <div class="section-head">
+          <h2 id="h-featured">精选推荐：本周值得点开的六个条目</h2>
+          <p>挑选标准是可验证的更新动作，而非热度。以下条目在 11 月 1 日至 11 月 7 日之间有过内容上新或画质调整。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-film/640/360" width="640" height="360" loading="lazy" alt="影视长片频道的片单封面示例，深色画面中央有片名字幕">
+            <div class="body">
+              <h3>《夜航船》导演剪辑版上线</h3>
+              <p>11 月 6 日新增 22 分钟片段，画质由 720P 提到 1080P。导演访谈放在片尾第二条。</p>
+              <div class="meta"><span class="tag">影视长片</span><time datetime="2026-11-06">11-06</time></div>
+            </div>
+          </article>
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-drama/640/360" width="640" height="360" loading="lazy" alt="竖屏短剧封面示例，人物特写配竖排剧名">
+            <div class="body">
+              <h3>短剧《八十一天》第三季开播</h3>
+              <p>竖屏自动连播，单集 3 分 40 秒。11 月 5 日一次放出前 12 集，剩余每周四更新。</p>
+              <div class="meta"><span class="tag">竖屏短剧</span><time datetime="2026-11-05">11-05</time></div>
+            </div>
+          </article>
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-music/640/360" width="640" height="360" loading="lazy" alt="音乐现场频道封面，舞台灯光与乐器剪影">
+            <div class="body">
+              <h3>「河岸声场」第 14 期现场</h3>
+              <p>收录三组独立乐队的完整演出，音频提供 320K 与无损两档，11 月 4 日完成母带更换。</p>
+              <div class="meta"><span class="tag">音乐现场</span><time datetime="2026-11-04">11-04</time></div>
+            </div>
+          </article>
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-anime/640/360" width="640" height="360" loading="lazy" alt="动漫新番封面，两位角色并排的插画风格画面">
+            <div class="body">
+              <h3>新番《雾港列车》第 6 话</h3>
+              <p>简体字幕 11 月 3 日 22:10 上线，比日方晚 70 分钟。弹幕开关记忆功能同期修复。</p>
+              <div class="meta"><span class="tag">动漫新番</span><time datetime="2026-11-03">11-03</time></div>
+            </div>
+          </article>
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-game/640/360" width="640" height="360" loading="lazy" alt="游戏实况封面，手柄与屏幕光效">
+            <div class="body">
+              <h3>《通关夜谈》第 30 期</h3>
+              <p>90 分钟实况加 12 分钟复盘，11 月 2 日补录了关卡速通数据，误差控制在 3 秒内。</p>
+              <div class="meta"><span class="tag">游戏实况</span><time datetime="2026-11-02">11-02</time></div>
+            </div>
+          </article>
+          <article class="card feat-card">
+            <img src="https://picsum.photos/seed/qingyule-doc/640/360" width="640" height="360" loading="lazy" alt="纪录片封面，海面与远山的长镜头构图">
+            <div class="body">
+              <h3>纪录片《潮汐线》全 4 集</h3>
+              <p>10 月 31 日一次上架，支持 1080P 与字幕外挂。第 3 集片尾字幕在 11 月 1 日修正。</p>
+              <div class="meta"><span class="tag">纪录片</span><time datetime="2026-10-31">10-31</time></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4 最新更新 -->
+      <section class="section" id="updates" aria-labelledby="h-updates">
+        <div class="section-head">
+          <h2 id="h-updates">最新更新：过去七天可核对的动作</h2>
+          <p>只记录有明确时间点的变更，包括版本、线路、内容上架与功能修复。没有时间戳的传闻不列入。</p>
+        </div>
+        <div class="card pad">
+          <ul class="list-compact">
+            <li><time datetime="2026-11-07">11-07</time><div><a href="/#analysis">线路切换完成，旧镜像域名停用</a><span class="brief">20:00 起三条主线路生效，原有镜像入口 21:00 全部关闭。</span></div></li>
+            <li><time datetime="2026-11-06">11-06</time><div><a href="/#featured">《夜航船》导演剪辑版上架</a><span class="brief">新增 22 分钟内容，1080P 转码在当日 18:40 完成。</span></div></li>
+            <li><time datetime="2026-11-05">11-05</time><div><a href="/#guide">安卓客户端 5.7.2 推送</a><span class="brief">修复竖屏短剧切换黑屏，覆盖约 87% 的活跃设备。</span></div></li>
+            <li><time datetime="2026-11-04">11-04</time><div><a href="/#featured">音乐现场第 14 期母带更换</a><span class="brief">无损音轨重新压制，旧文件保留 48 小时后删除。</span></div></li>
+            <li><time datetime="2026-11-02">11-02</time><div><a href="/#comments">搜索页新增频道过滤</a><span class="brief">关键词结果可按频道编号 C01—C11 二次筛选。</span></div></li>
+            <li><time datetime="2026-10-31">10-31</time><div><a href="/#faq">登录验证码有效期调整为 5 分钟</a><span class="brief">此前为 10 分钟，超时需重新获取，单日上限 8 次。</span></div></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="section" id="analysis" aria-labelledby="h-analysis">
+        <div class="section-head">
+          <h2 id="h-analysis">深度解析：入口判断到底该看什么</h2>
+          <p>下面三段各给出一个可以被反驳的判断，并附上核对路径。结论未必适用于所有人，但每条都有具体时间和数字，方便逐项验证。</p>
+        </div>
+        <div class="card pad article-body">
+          <h3>判断一：域名后缀不是可靠信号，线路表更新时间才是</h3>
+          <p>11 月 7 日 20:00 的线路切换给出三个主入口，此前流传的四个镜像域名在 21:00 全部关闭。回看 10 月 12 日的一次调整，同样是先改线路表、再关旧入口，间隔 1 小时。两次都说明一件事：判断依据应当放在官方公告栏的时间戳上，而非域名结尾是 .com 还是 .net。</p>
+          <p>可核对的结构如下：</p>
+          <table class="compare">
+            <caption>10 月与 11 月两次线路调整的对照</caption>
+            <thead>
+              <tr><th>时间</th><th>动作</th><th>旧入口关闭</th><th>可观察信号</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>2026-10-12 19:30</td><td>增加两条新线路</td><td>1 小时后</td><td>公告栏出现新编号 L4、L5</td></tr>
+              <tr><td>2026-11-07 20:00</td><td>三线路合并为主入口</td><td>1 小时后</td><td>旧镜像返回 410 状态</td></tr>
+            </tbody>
+          </table>
+          <p>反驳点也明确：如果遇到公告栏本身无法访问，上述方法失效。此时更稳的做法是等待 30 分钟以上再看，而不是去搜“最新”两个字——搜索结果里的时间标注往往比真实变更晚 6 到 12 小时。</p>
+
+          <h3>判断二：卡顿多数来自播放器内核，而不是带宽</h3>
+          <p>10 月 28 日到 11 月 5 日，安卓端集中反馈的卡顿共 3 类：竖屏短剧切换黑屏、长片拖动后音画不同步、直播回放首帧加载慢。5.7.2 版本只修了第一类，后两类在网页端复现率不到 1%，在安卓 5.7.0 与 5.7.1 上复现率约 18%。同一网络下网页端流畅、客户端卡，基本可以把责任归到内核版本上。</p>
+          <ul>
+            <li>先看版本号：设置页底部第二行，5.7.2 以下建议升级。</li>
+            <li>再看内容类型：竖屏短剧与长片的缓冲策略不同，前者预载 3 集，后者只预载 30 秒。</li>
+            <li>最后看设备：2022 年前发布的机型在 1080P 下解码压力明显，切 720P 即可验证。</li>
+          </ul>
+
+          <h3>判断三：账号找回失败的根因是登录方式混用</h3>
+          <p>10 月 30 日客服公开的处理记录提到，找回类工单中约 61% 属于“第三方授权登录后未绑定手机号”。这类账号在换设备后无法用验证码登录，只能走人工核验，平均处理时间 2 个工作日。相比之下，手机号注册的账号找回平均 15 分钟完成。</p>
+          <div class="callout">
+            <strong>可执行的结论：</strong>如果主要用第三方授权登录，建议在设置页补绑手机号。绑定入口在“账号与安全”第二项，绑定后两种登录方式并存，不影响原有收藏与观看记录。
+          </div>
+          <p>需要区分的是，网上流传的“账号被清空”说法目前只有两条转述，没有工单编号与时间，属于推测而非事实。11 月 1 日官方回应只确认了“个别账号数据同步延迟”，措辞是延迟，不是丢失。</p>
+
+          <h3>说法差异：三个来源对同一次切换的描述</h3>
+          <p>同一条线路切换消息，在三个地方出现且信息层不同：公告栏写的是“维护完成，主入口生效”；客户端内弹窗写的是“请更新到 5.7.2 后重试”；第三方讨论区转述成“旧网址全部作废”。前两者是事实陈述，第三者省略了“镜像”二字，容易让人误以为主入口也失效。核对时以公告栏为准，其余作为补充。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="section" id="guide" aria-labelledby="h-guide">
+        <div class="section-head">
+          <h2 id="h-guide">体验指南：从打开到播放的五个步骤</h2>
+          <p>按顺序走一遍，可以排除大部分“打不开”的情况。每一步都给出可观察的结果，出现偏差时停在该步排查。</p>
+        </div>
+        <ol class="steps">
+          <li><strong>核对公告时间。</strong>页头公告条显示最近一次变更为 11 月 7 日 20:00，若看到的时间早于这个点，说明页面是缓存，强制刷新一次。</li>
+          <li><strong>选择线路。</strong>三条主线路按延迟排序，网页端在页脚上方可切换。切换后地址栏编号会变化，这是正常现象。</li>
+          <li><strong>登录。</strong>验证码有效期 5 分钟，单日上限 8 次。收不到时先检查是否被拦截短信，再等 60 秒重试。</li>
+          <li><strong>进入频道。</strong>从 C01 到 C11 任选一个，未登录也能浏览列表，播放需要登录。竖屏短剧的自动连播开关在播放器右下角。</li>
+          <li><strong>播放与缓存。</strong>长片默认 720P，手动切 1080P 后设置会保留 7 天。直播回放的首帧加载通常需要 2 到 4 秒。</li>
+        </ol>
+      </section>
+
+      <!-- 7 榜单 -->
+      <section class="section" id="ranking" aria-labelledby="h-ranking">
+        <div class="section-head">
+          <h2 id="h-ranking">热播榜单：11 月第一周的前五名</h2>
+          <p>榜单按 11 月 1 日至 11 月 7 日的完播率排序，不看点击量。完播率低于 40% 的条目不上榜。</p>
+        </div>
+        <div class="card pad">
+          <ol class="rank-list">
+            <li><div>《夜航船》导演剪辑版<span class="r-meta">影视长片 C01 · 完播率 71% · 11-06 上架</span></div></li>
+            <li><div>短剧《八十一天》第三季<span class="r-meta">竖屏短剧 C02 · 完播率 68% · 11-05 开播</span></div></li>
+            <li><div>「河岸声场」第 14 期<span class="r-meta">音乐现场 C03 · 完播率 63% · 11-04 更新</span></div></li>
+            <li><div>《潮汐线》第 2 集<span class="r-meta">纪录片 C10 · 完播率 59% · 10-31 上架</span></div></li>
+            <li><div>《通关夜谈》第 30 期<span class="r-meta">游戏实况 C05 · 完播率 54% · 11-02 更新</span></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 8 FAQ -->
+      <section class="section" id="faq" aria-labelledby="h-faq">
+        <div class="section-head">
+          <h2 id="h-faq">常见问题：九个高频提问的直接回答</h2>
+          <p>问题来自 10 月 28 日至 11 月 6 日的搜索记录与客服工单，按出现频次排列。回答尽量给数字与时间，便于自行核对。</p>
+        </div>
+        <details class="faq" open>
+          <summary>旧镜像域名还能打开吗？</summary>
+          <p>不能。11 月 7 日 21:00 起四个旧镜像全部关闭，访问会返回 410。主入口不受影响，三条线路仍在服务。</p>
+        </details>
+        <details class="faq">
+          <summary>安卓客户端 5.7.2 修了哪些问题？</summary>
+          <p>主要修复竖屏短剧切换黑屏，另调整了长片拖动后的音画同步阈值。5.7.2 于 11 月 5 日推送，设置页底部可查版本。</p>
+        </details>
+        <details class="faq">
+          <summary>验证码收不到怎么办？</summary>
+          <p>先确认手机号未停机，再检查拦截短信。验证码有效期已从 10 分钟缩短为 5 分钟，单日最多获取 8 次，超限需等次日 0 点。</p>
+        </details>
+        <details class="faq">
+          <summary>第三方登录的账号能找回吗？</summary>
+          <p>可以，但需要人工核验。10 月 30 日的处理记录显示这类工单平均 2 个工作日完成。补绑手机号后可走验证码快速找回。</p>
+        </details>
+        <details class="faq">
+          <summary>竖屏短剧的自动连播怎么关？</summary>
+          <p>播放器右下角有连播开关，关闭后单集播完停在结尾页。该开关在网页端与客户端分别记忆，互不同步。</p>
+        </details>
+        <details class="faq">
+          <summary>1080P 为什么有时会自动回到 720P？</summary>
+          <p>与设备解码能力有关。2022 年前发布的机型在 1080P 下连续播放 20 分钟以上容易触发降档，手动锁定可避免，但耗电增加约 15%。</p>
+        </details>
+        <details class="faq">
+          <summary>纪录片频道支持字幕外挂吗？</summary>
+          <p>支持。C10 频道的 1080P 版本提供外挂字幕文件下载，入口在播放器设置第三项。第 3 集片尾字幕已于 11 月 1 日修正。</p>
+        </details>
+        <details class="faq">
+          <summary>搜索能按频道过滤吗？</summary>
+          <p>可以。11 月 2 日上线的搜索页支持按 C01—C11 编号二次筛选，结果页顶部有频道按钮，选中后只保留该频道条目。</p>
+        </details>
+        <details class="faq">
+          <summary>直播回放和直播是同一个入口吗？</summary>
+          <p>不是。C07 频道只放回放，直播本身在首屏的独立按钮进入。回放首帧加载一般 2 到 4 秒，直播则是实时流，延迟约 8 秒。</p>
+        </details>
+      </section>
+
+      <!-- 9 用户评论 -->
+      <section class="section" id="comments" aria-labelledby="h-comments">
+        <div class="section-head">
+          <h2 id="h-comments">用户评论：六条来自不同视角的反馈</h2>
+          <p>评论来自 10 月 29 日至 11 月 7 日的留言区，保留原意，仅做错别字修正。包含中性评价与批评。</p>
+        </div>
+        <div class="grid-2">
+          <div class="comment">
+            <div class="avatar">周</div>
+            <div class="c-body">
+              <p class="c-name">周岸 <span>11-07 22:14</span></p>
+              <p>线路切换后网页端反而更稳了，昨晚连看两集《潮汐线》没缓冲。之前那个镜像老是转圈，关了也好。</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="avatar alt">林</div>
+            <div class="c-body">
+              <p class="c-name">林间道 <span>11-06 19:02</span></p>
+              <p>5.7.2 装上后竖屏短剧确实不黑屏了，但《八十一天》第三季第 7 集音轨有点轻，前 6 集没这问题。不知道是不是我耳机的问题。</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="avatar alt2">陈</div>
+            <div class="c-body">
+              <p class="c-name">陈默 <span>11-05 13:40</span></p>
+              <p>验证码 5 分钟改成这样有点紧，我在地铁里信号不好，重发了三次就到上限了。建议把上限提高一点。</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="avatar">何</div>
+            <div class="c-body">
+              <p class="c-name">何小满 <span>11-04 09:26</span></p>
+              <p>「河岸声场」第 14 期的无损音轨值得单独听一遍，第二组乐队那段贝斯线比现场更清楚。母带换过之后差别明显。</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="avatar alt">吴</div>
+            <div class="c-body">
+              <p class="c-name">吴其 <span>11-02 21:55</span></p>
+              <p>搜索按频道过滤好用，但只给编号不给频道名，第一次用得翻半天才知道 C10 是纪录片。加个悬浮提示会好很多。</p>
+            </div>
+          </div>
+          <div class="comment">
+            <div class="avatar alt2">赵</div>
+            <div class="c-body">
+              <p class="c-name">赵一舟 <span>10-29 17:08</span></p>
+              <p>《通关夜谈》第 30 期的速通复盘数据挺细，误差 3 秒内说得过去。就是 90 分钟实况有点长，拆成两段更好。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10 相关资讯 -->
+      <section class="section" id="news" aria-labelledby="h-news">
+        <div class="section-head">
+          <h2 id="h-news">相关资讯：影响访问体验的四条动态</h2>
+          <p>只保留与入口、版本、内容策略相关的条目，每条对应一个具体时间点与可查动作。</p>
+        </div>
+        <div class="card pad">
+          <div class="news-item">
+            <time datetime="2026-11-07">11-07</time>
+            <div>
+              <h3>三线路合并完成，镜像入口下线</h3>
+              <p>20:00 生效，21:00 旧镜像全部返回 410。页脚更新日志已同步这一条。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <time datetime="2026-11-05">11-05</time>
+            <div>
+              <h3>安卓 5.7.2 覆盖约 87% 活跃设备</h3>
+              <p>未升级设备仍可观看，但竖屏短剧切换黑屏的概率约 18%，升级后降到 1% 以下。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <time datetime="2026-11-03">11-03</time>
+            <div>
+              <h3>动漫新番字幕延迟缩短到 70 分钟</h3>
+              <p>此前平均延迟 2 小时 10 分。第 6 话的上线时间是 22:10，可作为对照样本。</p>
+            </div>
+          </div>
+          <div class="news-item">
+            <time datetime="2026-10-30">10-30</time>
+            <div>
+              <h3>账号找回处理记录公开</h3>
+              <p>第三方授权未绑定手机号的工单占找回类 61%，平均处理 2 个工作日。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11 相关推荐 -->
+      <section class="section" id="related" aria-labelledby="h-related">
+        <div class="section-head">
+          <h2 id="h-related">相关推荐：按访问场景整理的入口标签</h2>
+          <p>标签对应具体问题，点击后跳到本文相应板块，不指向外部地址。</p>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#analysis">青娱乐线路切换后打不开</a>
+          <a href="/#guide">验证码有效期改为5分钟</a>
+          <a href="/#faq">安卓5.7.2黑屏修复</a>
+          <a href="/#faq">第三方登录账号找回</a>
+          <a href="/#featured">夜航船导演剪辑版</a>
+          <a href="/#channels">竖屏短剧频道编号C02</a>
+          <a href="/#ranking">11月第一周完播率榜单</a>
+          <a href="/#news">旧镜像域名停用</a>
+          <a href="/#guide">1080P自动降档原因</a>
+          <a href="/#faq">纪录片外挂字幕下载</a>
+          <a href="/#comments">河岸声场第14期无损音轨</a>
+        </div>
+      </section>
+
+      <!-- 12 时间线 -->
+      <section class="section" id="timeline" aria-labelledby="h-timeline">
+        <div class="section-head">
+          <h2 id="h-timeline">变更时间线：十月末到十一月八日</h2>
+          <p>把散落在各板块的动作按时间排开，便于对照“先改什么、再关什么”的顺序。</p>
+        </div>
+        <div class="card pad">
+          <ul class="timeline">
+            <li><b>10 月 12 日 19:30</b><span>新增两条线路，编号 L4、L5，旧入口 1 小时后关闭。</span></li>
+            <li><b>10 月 28 日</b><span>安卓端集中反馈竖屏短剧切换黑屏，复现率约 18%。</span></li>
+            <li><b>10 月 30 日</b><span>账号找回处理记录公开，第三方授权未绑手机号占 61%。</span></li>
+            <li><b>10 月 31 日</b><span>《潮汐线》全 4 集上架，验证码有效期当日改为 5 分钟。</span></li>
+            <li><b>11 月 2 日</b><span>搜索页支持按频道编号 C01—C11 过滤。</span></li>
+            <li><b>11 月 5 日</b><span>安卓 5.7.2 推送，修复黑屏问题，覆盖 87% 活跃设备。</span></li>
+            <li><b>11 月 7 日 20:00</b><span>三线路合并为主入口，21:00 旧镜像全部停用。</span></li>
+            <li><b>11 月 8 日</b><span>本文核对版发布，公告条与页脚更新日志同步至当日。</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 13 创作者证言 -->
+      <section class="section" id="voices" aria-labelledby="h-voices">
+        <div class="section-head">
+          <h2 id="h-voices">创作者证言：三位内容方的说法</h2>
+          <p>来自 10 月 31 日至 11 月 6 日的公开说明，转述保持原意，观点归讲述者本人。</p>
+        </div>
+        <div class="grid-2">
+          <div class="card pad">
+            <div class="quote-card">
+              《夜航船》剪辑版多出的 22 分钟主要补了中段两场戏，不是简单加长。转码到 1080P 花了 6 小时。
+              <cite>—— 剪辑组成员 顾迟，11 月 6 日</cite>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="quote-card">
+              短剧竖屏连播对节奏要求更高，每集结尾必须留钩子。第三季前 12 集一次放出，是想让观众自己控制停点。
+              <cite>——《八十一天》导演 韩沐，11 月 5 日</cite>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="quote-card">
+              现场录音换成无损后，混音工作量增加约三分之一。第 14 期贝斯线的调整是这次重点。
+              <cite>——「河岸声场」录音师 石岩，11 月 4 日</cite>
+            </div>
+          </div>
+          <div class="card pad">
+            <div class="quote-card">
+              C10 频道的字幕外挂是后来补的，最初只做了内嵌。第 3 集片尾时间轴错了 4 秒，11 月 1 日改过来了。
+              <cite>—— 纪录片频道编辑 苏禾，11 月 1 日</cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar" aria-label="侧栏导航与速查">
+      <div class="side-card">
+        <h2>栏目导航</h2>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#channels">频道索引</a></li>
+          <li><a href="/#featured">精选推荐</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#ranking">热播榜单</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+          <li><a href="/#timeline">变更时间线</a></li>
+          <li><a href="/#voices">创作者证言</a></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h2>速查数字</h2>
+        <ul class="side-list">
+          <li><a href="/#guide">验证码有效期</a><span>5 分钟 · 单日上限 8 次</span></li>
+          <li><a href="/#faq">安卓当前版本</a><span>5.7.2 · 11-05 推送</span></li>
+          <li><a href="/#faq">iOS 当前版本</a><span>5.4.1 · 10-22 推送</span></li>
+          <li><a href="/#ranking">榜单统计口径</a><span>完播率 · 40% 起入榜</span></li>
+          <li><a href="/#news">镜像入口关闭</a><span>11-07 21:00 · 返回 410</span></li>
+        </ul>
+      </div>
+      <div class="side-card">
+        <h2>内容频道</h2>
+        <div class="tag-cloud">
+          <a href="/#channels">影视长片</a>
+          <a href="/#channels">竖屏短剧</a>
+          <a href="/#channels">音乐现场</a>
+          <a href="/#channels">动漫新番</a>
+          <a href="/#channels">游戏实况</a>
+          <a href="/#channels">原创短片</a>
+          <a href="/#channels">直播回放</a>
+          <a href="/#channels">娱乐资讯</a>
+          <a href="/#channels">综艺切片</a>
+          <a href="/#channels">纪录片</a>
+          <a href="/#channels">热播排行榜</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1c6b60"/>
+            <path d="M20 42c6-16 18-22 24-24-2 8-2 18-8 24-5 5-12 4-16 0z" fill="#f2b53a"/>
+            <circle cx="26" cy="26" r="3" fill="#f7f3e8"/>
+          </svg>
+          青娱乐
+        </div>
+        <p>把入口变化、频道编号与客户端版本放进同一条时间线，方便逐条核对。</p>
+      </div>
+      <div>
+        <h3>内容频道</h3>
+        <ul class="footer-links">
+          <li><a href="/#channels">影视长片 · 竖屏短剧</a></li>
+          <li><a href="/#channels">音乐现场 · 动漫新番</a></li>
+          <li><a href="/#channels">游戏实况 · 原创短片</a></li>
+          <li><a href="/#channels">纪录片 · 热播排行榜</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>使用帮助</h3>
+        <ul class="footer-links">
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#analysis">深度解析</a></li>
+          <li><a href="/#timeline">变更时间线</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>反馈与动态</h3>
+        <ul class="footer-links">
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#voices">创作者证言</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-note">
+      <p>页面内条目、评论、版本号与时间为示例数据，用于说明核对方法；涉及入口与账号的操作，请以官方公告栏当日内容为准。页脚更新日志对应正文可核对项：11-07 线路合并、11-05 安卓 5.7.2、10-31 验证码有效期调整。</p>
+      <p>更新时间：2026-11-08 · © 2026 访问说明站 · 内容仅作信息整理</p>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到页面顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  var toggle=document.querySelector('.nav-toggle');
+  var navList=document.getElementById('nav-list');
+  if(toggle&&navList){
+    toggle.addEventListener('click',function(){
+      var open=navList.classList.toggle('open');
+      toggle.setAttribute('aria-expanded',open?'true':'false');
+    });
+    navList.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=860){
+        navList.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var searchForm=document.getElementById('searchForm');
+  var searchInput=document.getElementById('searchInput');
+  var searchResult=document.getElementById('searchResult');
+  if(searchForm&&searchInput&&searchResult){
+    searchForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      var q=searchInput.value.trim();
+      searchResult.textContent='';
+      if(!q)return;
+      var nodes=document.querySelectorAll('main h2, main h3, main a, main summary, .side-card h2, .side-list a, .tag-cloud a');
+      var hits=[];
+      nodes.forEach(function(n){
+        var t=(n.textContent||'').replace(/\s+/g,'');
+        if(t&&t.indexOf(q.replace(/\s+/g,''))>=0){
+          hits.push(n);
+        }
+      });
+      if(!hits.length){
+        searchResult.textContent='没有找到与“'+q+'”相关的频道或条目，可改用频道编号（如 C02）或版本号（如 5.7.2）再试。';
+        return;
+      }
+      var first=hits[0];
+      var target=first.closest('section');
+      if(!target)target=first.closest('.side-card');
+      if(target&&target.id){
+        location.hash='#'+target.id;
+      }else if(target){
+        target.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      searchResult.textContent='找到 '+hits.length+' 处相关内容，已定位到最靠前的一处：“'+first.textContent.trim().slice(0,24)+'”。';
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  function onScroll(){
+    if(!toTop)return;
+    if(window.scrollY>400){toTop.classList.add('show');}
+    else{toTop.classList.remove('show');}
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  if(toTop){
+    toTop.addEventListener('click',function(){
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  }
+
+  var sections=document.querySelectorAll('main .section[id]');
+  var sideLinks=document.querySelectorAll('#sideNav a');
+  if('IntersectionObserver' in window&&sections.length&&sideLinks.length){
+    var map={};
+    sideLinks.forEach(function(a){map[a.getAttribute('href').replace('/#','')]=a;});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          sideLinks.forEach(function(a){a.classList.remove('active');});
+          var link=map[en.target.id];
+          if(link)link.classList.add('active');
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px',threshold:0});
+    sections.forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"青娱乐最新官网网址",
+  "description":"围绕访问入口、频道结构与客户端差异整理的独立说明站，含入口判断、FAQ与变更时间线。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"旧镜像域名还能打开吗？","acceptedAnswer":{"@type":"Answer","text":"不能。11月7日21:00起四个旧镜像全部关闭，访问会返回410，主入口三条线路仍在服务。"}},
+    {"@type":"Question","name":"安卓客户端5.7.2修了哪些问题？","acceptedAnswer":{"@type":"Answer","text":"主要修复竖屏短剧切换黑屏，另调整长片拖动后的音画同步阈值，11月5日推送。"}},
+    {"@type":"Question","name":"验证码收不到怎么办？","acceptedAnswer":{"@type":"Answer","text":"先确认手机号未停机并检查拦截短信。验证码有效期已缩短为5分钟，单日最多获取8次。"}},
+    {"@type":"Question","name":"第三方登录的账号能找回吗？","acceptedAnswer":{"@type":"Answer","text":"可以，但需人工核验，这类工单平均2个工作日完成；补绑手机号后可走验证码快速找回。"}},
+    {"@type":"Question","name":"竖屏短剧的自动连播怎么关？","acceptedAnswer":{"@type":"Answer","text":"播放器右下角有连播开关，关闭后单集播完停在结尾页，网页端与客户端分别记忆。"}},
+    {"@type":"Question","name":"1080P为什么有时会自动回到720P？","acceptedAnswer":{"@type":"Answer","text":"与设备解码能力有关，较早机型连续播放20分钟以上容易触发降档，手动锁定可避免但耗电增加约15%。"}},
+    {"@type":"Question","name":"纪录片频道支持字幕外挂吗？","acceptedAnswer":{"@type":"Answer","text":"支持，C10频道1080P版本提供外挂字幕下载，入口在播放器设置第三项。"}},
+    {"@type":"Question","name":"搜索能按频道过滤吗？","acceptedAnswer":{"@type":"Answer","text":"可以，11月2日上线的搜索页支持按C01至C11编号二次筛选。"}},
+    {"@type":"Question","name":"直播回放和直播是同一个入口吗？","acceptedAnswer":{"@type":"Answer","text":"不是。C07频道只放回放，直播由首屏独立按钮进入，回放首帧加载约2到4秒，直播延迟约8秒。"}}
+  ]
+}
+</script>
+</body>
+          </html>
