@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>九色影视在线观看-片库分类与选片指南</title>
+<meta name="description" content="九色影视在线观看栏目整理片库分类、剧集更新与选片方法，覆盖悬疑剧、国产纪录片、动画电影、老片修复与字幕版本，附清晰条目时间与可核对信息。">
+<meta name="keywords" content="九色影视在线观看">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2438'/%3E%3Ccircle cx='22' cy='24' r='7' fill='%23e8b64c'/%3E%3Ccircle cx='42' cy='24' r='7' fill='%23d8574a'/%3E%3Ccircle cx='32' cy='41' r='7' fill='%234fa3a0'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1b2438;
+  --ink-2:#2c3a56;
+  --paper:#f6f3ec;
+  --card:#fffdf8;
+  --line:#ddd6c7;
+  --line-2:#c8bfab;
+  --gold:#b8862a;
+  --gold-soft:#f0e2c4;
+  --red:#b8433a;
+  --teal:#2f7d7a;
+  --teal-soft:#dcebe9;
+  --muted:#6b6a63;
+  --radius:14px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(27,36,56,.07);
+  --shadow-lg:0 10px 28px rgba(27,36,56,.12);
+  --font:"Songti SC","Noto Serif SC",Georgia,"STSong",serif;
+  --font-ui:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  --w:1180px;
+  --announce-h:38px;
+  --head-h:66px;
+  --stick:calc(var(--announce-h) + var(--head-h));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-ui);
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font);line-height:1.35;margin:0}
+p{margin:0 0 .9em}
+a{color:var(--ink-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{width:min(100% - 32px,var(--w));margin:0 auto}
+section[id]{scroll-margin-top:calc(var(--stick) + 12px)}
+
+/* ---------- 公告条 ---------- */
+.announce{
+  position:sticky;top:0;z-index:60;
+  background:var(--ink);
+  color:#efe8d6;
+  font-size:13.5px;
+  height:var(--announce-h);
+  display:flex;align-items:center;
+  border-bottom:1px solid #3a4767;
+}
+.announce .wrap{display:flex;align-items:center;gap:12px;min-width:0}
+.announce .tag{
+  flex:none;background:var(--gold);color:#1b2438;
+  font-weight:700;font-size:12px;padding:1px 8px;border-radius:999px;
+  letter-spacing:.5px;
+}
+.announce .txt{
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.announce .txt strong{color:#f0d8a0;font-weight:600}
+
+/* ---------- 页头 ---------- */
+.header{
+  position:sticky;top:var(--announce-h);z-index:55;
+  background:rgba(246,243,236,.94);
+  backdrop-filter:blur(8px);
+  height:var(--head-h);
+  border-bottom:1px solid var(--line);
+}
+.header .wrap{height:100%;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand .mark{width:36px;height:36px;flex:none;display:block}
+.brand .name{
+  font-family:var(--font);font-size:20px;font-weight:700;letter-spacing:.5px;color:var(--ink);
+  white-space:nowrap;
+}
+.nav{display:flex;align-items:center;gap:2px;flex:1;min-width:0;overflow:hidden}
+.nav a{
+  font-size:14.5px;color:var(--ink-2);padding:6px 9px;border-radius:6px;white-space:nowrap;
+}
+.nav a:hover{background:var(--gold-soft);text-decoration:none}
+.nav a.on{color:var(--red);font-weight:600}
+.head-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search{
+  display:flex;align-items:center;border:1px solid var(--line-2);background:var(--card);
+  border-radius:999px;padding:2px 4px 2px 12px;
+}
+.search input{
+  border:0;background:transparent;outline:none;font:inherit;font-size:13.5px;width:118px;color:var(--ink);
+}
+.search button{
+  border:0;background:var(--ink);color:#f6f3ec;border-radius:999px;
+  font:inherit;font-size:13px;padding:4px 12px;cursor:pointer;
+}
+.search button:hover{background:var(--ink-2)}
+.search-wrap{position:relative}
+.search-result{
+  position:absolute;right:0;top:calc(100% + 8px);width:300px;max-width:80vw;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-lg);padding:8px;display:none;z-index:70;
+}
+.search-result.show{display:block}
+.search-result p{font-size:13px;margin:0;padding:6px 8px;color:var(--muted);line-height:1.6}
+.search-result a{display:block;font-size:13.5px;padding:6px 8px;border-radius:6px}
+.search-result a:hover{background:var(--gold-soft);text-decoration:none}
+.menu-btn{
+  display:none;border:1px solid var(--line-2);background:var(--card);
+  border-radius:8px;width:38px;height:34px;align-items:center;justify-content:center;
+  cursor:pointer;padding:0;
+}
+.menu-btn span{display:block;width:17px;height:2px;background:var(--ink);position:relative}
+.menu-btn span::before,.menu-btn span::after{
+  content:"";position:absolute;left:0;width:17px;height:2px;background:var(--ink);
+}
+.menu-btn span::before{top:-5px}
+.menu-btn span::after{top:5px}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 320px at 82% -10%,rgba(184,134,42,.20),transparent 70%),
+    radial-gradient(700px 300px at 6% 110%,rgba(47,125,122,.16),transparent 70%),
+    var(--ink);
+  color:#f3eee0;
+  padding:52px 0 46px;
+}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:40px;align-items:center}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;
+  color:#e6cf9c;border:1px solid rgba(230,207,156,.4);border-radius:999px;padding:3px 12px;
+  margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(30px,4.2vw,46px);letter-spacing:1px;color:#fbf7ec;margin-bottom:14px;
+}
+.hero .lead{
+  font-size:16.5px;color:#cfc8b8;max-width:36em;line-height:1.85;margin-bottom:24px;
+}
+.hero .lead b{color:#f0d8a0;font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;font-size:15px;padding:9px 20px;border-radius:999px;
+  border:1px solid transparent;transition:transform .15s ease,background .15s ease;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#1b1c20;font-weight:600}
+.btn-gold:hover{background:#c9962f}
+.btn-ghost{border-color:rgba(243,238,224,.38);color:#f3eee0}
+.btn-ghost:hover{background:rgba(243,238,224,.1)}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:#a9a293}
+.hero-stats b{display:block;font-family:var(--font);font-size:24px;color:#f0d8a0;line-height:1.3}
+.hero-art{position:relative;height:300px}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero-art .cap{
+  position:absolute;right:2px;bottom:-4px;font-size:11.5px;color:#8f8877;letter-spacing:.5px;
+}
+
+/* ---------- 主内容布局 ---------- */
+.layout{
+  display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;
+  padding:38px 0 10px;align-items:start;
+}
+.main-col{min-width:0}
+aside.side{min-width:0}
+
+/* ---------- 通用板块 ---------- */
+.block{margin-bottom:44px}
+.block-head{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:20px;
+}
+.block-head h2{font-size:22px;letter-spacing:.5px}
+.block-head .no{
+  font-family:var(--font);font-size:13px;color:var(--gold);letter-spacing:2px;font-weight:700;
+}
+.block-head .note{font-size:13px;color:var(--muted);margin-left:auto}
+.h3{font-size:17px;margin:22px 0 8px;color:var(--ink)}
+.muted{color:var(--muted);font-size:13.5px}
+.small{font-size:13.5px}
+
+/* 概览卡片 */
+.ov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ov-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 16px 14px;box-shadow:var(--shadow);
+}
+.ov-card h3{font-size:16px;margin-bottom:6px}
+.ov-card p{font-size:13.5px;color:#4a4d55;margin:0 0 8px;line-height:1.7}
+.ov-card .meta{font-size:12px;color:var(--muted);letter-spacing:.3px}
+
+/* 精选 */
+.pick-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:16px}
+.pick-main{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+}
+.pick-main img{width:100%;height:200px;object-fit:cover;display:block}
+.pick-main .in{padding:16px 18px 18px}
+.pick-main h3{font-size:19px;margin-bottom:8px}
+.pick-main p{font-size:14px;color:#454955;margin-bottom:10px}
+.pick-side{display:grid;gap:12px}
+.pick-item{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px 14px;display:grid;grid-template-columns:56px 1fr;gap:12px;align-items:center;
+}
+.pick-item .score{
+  font-family:var(--font);font-size:22px;color:var(--gold);text-align:center;font-weight:700;
+  border-right:1px solid var(--line);padding-right:10px;line-height:1.2;
+}
+.pick-item .score small{display:block;font-size:10.5px;color:var(--muted);letter-spacing:1px;font-family:var(--font-ui)}
+.pick-item h4{margin:0 0 2px;font-size:14.5px;font-family:var(--font)}
+.pick-item p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* 最新更新 紧凑列表 */
+.upd-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.upd-list li{
+  display:grid;grid-template-columns:74px 1fr auto;gap:12px;align-items:baseline;
+  padding:11px 2px;border-bottom:1px solid var(--line);
+}
+.upd-list .date{font-size:12.5px;color:var(--gold);letter-spacing:.5px;font-weight:600;white-space:nowrap}
+.upd-list .tt{font-size:14.5px;color:var(--ink-2)}
+.upd-list .tt b{font-family:var(--font);font-weight:700;color:var(--ink)}
+.upd-list .tagx{font-size:11.5px;color:var(--teal);background:var(--teal-soft);padding:1px 8px;border-radius:999px;white-space:nowrap}
+
+/* 分类入口 */
+.cat-index{display:flex;flex-wrap:wrap;gap:9px}
+.cat-index a{
+  font-size:14px;background:var(--card);border:1px solid var(--line-2);border-radius:999px;
+  padding:5px 15px;color:var(--ink-2);
+}
+.cat-index a:hover{background:var(--gold-soft);border-color:var(--gold);text-decoration:none}
+.cat-index a em{font-style:normal;color:var(--muted);font-size:12px;margin-left:5px}
+
+/* 深度解析 */
+.deep{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 26px 22px;box-shadow:var(--shadow);
+}
+.deep > p{font-size:15.5px;line-height:1.85;color:#33384a}
+.deep .quote{
+  border-left:3px solid var(--gold);background:#faf5e7;padding:12px 16px;margin:16px 0;
+  font-family:var(--font);font-size:15.5px;color:#3a3a34;line-height:1.8;
+}
+.compare{width:100%;border-collapse:collapse;margin:14px 0 18px;font-size:13.5px}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare th{background:#f0ebdd;font-weight:600;font-size:13px;color:var(--ink-2)}
+.compare td b{color:var(--red);font-weight:600}
+.timeline{list-style:none;margin:10px 0 18px;padding:0 0 0 18px;border-left:2px solid var(--line-2)}
+.timeline li{position:relative;padding:0 0 14px 16px;font-size:14px;line-height:1.8}
+.timeline li::before{
+  content:"";position:absolute;left:-25px;top:9px;width:9px;height:9px;border-radius:50%;
+  background:var(--card);border:2px solid var(--gold);
+}
+.timeline .d{font-weight:600;color:var(--gold);margin-right:6px;font-size:13px}
+
+/* 体验指南 编号步骤 */
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 16px 14px 58px;position:relative;font-size:14px;line-height:1.75;
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:14px;top:13px;width:28px;height:28px;
+  border-radius:50%;background:var(--ink);color:#f0d8a0;font-family:var(--font);
+  display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;
+}
+.steps li b{font-family:var(--font);color:var(--ink)}
+
+/* FAQ */
+.faq details{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  margin-bottom:9px;overflow:hidden;
+}
+.faq summary{
+  cursor:pointer;padding:12px 42px 12px 16px;font-size:14.5px;font-weight:600;color:var(--ink-2);
+  position:relative;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--gold);font-weight:400;line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq details[open] summary{border-bottom:1px dashed var(--line)}
+.faq .ans{padding:12px 16px 15px;font-size:14px;color:#41464f;line-height:1.85;margin:0}
+.faq .ans b{color:var(--ink)}
+
+/* 评论 */
+.cmt-list{display:grid;gap:12px}
+.cmt{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:13px 16px;font-size:14px;line-height:1.8;
+}
+.cmt .who{display:flex;align-items:center;gap:9px;margin-bottom:6px}
+.cmt .av{
+  width:26px;height:26px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;font-family:var(--font);font-weight:700;
+}
+.cmt .nm{font-size:13px;font-weight:600;color:var(--ink-2)}
+.cmt .tm{font-size:11.5px;color:var(--muted);margin-left:auto}
+.cmt p{margin:0;color:#3f4450}
+.cmt.neg{border-left:3px solid var(--red)}
+.cmt.pos{border-left:3px solid var(--teal)}
+.cmt .mention{color:var(--red);font-weight:600}
+
+/* 资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.news-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:14px 16px;
+}
+.news-card .dt{font-size:12px;color:var(--gold);font-weight:600;letter-spacing:.5px;margin-bottom:5px}
+.news-card h3{font-size:15px;margin-bottom:6px;line-height:1.5}
+.news-card p{font-size:13px;color:#4b5058;margin:0;line-height:1.72}
+
+/* 榜单 */
+.rank{list-style:none;counter-reset:r;margin:0;padding:0;display:grid;gap:8px}
+.rank li{
+  counter-increment:r;background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:10px 14px 10px 48px;position:relative;font-size:14px;line-height:1.7;
+}
+.rank li::before{
+  content:counter(r,decimal-leading-zero);position:absolute;left:14px;top:11px;
+  font-family:var(--font);font-weight:700;font-size:15px;color:var(--line-2);
+}
+.rank li:nth-child(1)::before,.rank li:nth-child(2)::before,.rank li:nth-child(3)::before{color:var(--gold)}
+.rank li b{font-family:var(--font);color:var(--ink)}
+.rank li span{color:var(--muted);font-size:12.5px;margin-left:6px}
+
+/* 标签推荐 */
+.tags{display:flex;flex-wrap:wrap;gap:9px}
+.tags a{
+  font-size:13.5px;background:var(--teal-soft);color:#215d5b;border-radius:999px;padding:5px 14px;
+  border:1px solid transparent;
+}
+.tags a:hover{background:#c9e0de;border-color:var(--teal);text-decoration:none}
+
+/* 侧栏 */
+.side-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;margin-bottom:20px;box-shadow:var(--shadow);
+}
+.side-card h2,.side-card h3{
+  font-size:15.5px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:12px;
+  color:var(--ink);
+}
+.side-nav{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.side-nav a{
+  display:block;font-size:13.5px;padding:6px 10px;border-radius:6px;color:var(--ink-2);
+  border-left:2px solid transparent;transition:background .15s;
+}
+.side-nav a:hover{background:#f4efe2;text-decoration:none}
+.side-nav a.active{background:var(--gold-soft);border-left-color:var(--gold);font-weight:600;color:var(--ink)}
+.side-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.side-list li{font-size:13.5px;line-height:1.65;color:#454955;padding-bottom:10px;border-bottom:1px dashed var(--line)}
+.side-list li:last-child{border-bottom:0;padding-bottom:0}
+.side-list b{display:block;font-family:var(--font);font-size:14px;color:var(--ink);margin-bottom:2px}
+.side-list .m{color:var(--muted);font-size:12px}
+.fact-box{display:grid;gap:10px}
+.fact-box div{
+  display:flex;justify-content:space-between;gap:10px;font-size:13px;border-bottom:1px dashed var(--line);
+  padding-bottom:8px;color:#454955;
+}
+.fact-box div:last-child{border-bottom:0;padding-bottom:0}
+.fact-box span:first-child{color:var(--muted)}
+.fact-box span:last-child{font-weight:600;color:var(--ink);text-align:right}
+
+/* 互动栏 */
+.poll{
+  background:linear-gradient(180deg,#fbf7ec,#f5efdf);
+  border:1px solid var(--line-2);border-radius:var(--radius);padding:18px 20px;
+}
+.poll h3{font-size:16px;margin-bottom:4px}
+.poll .q{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+.poll-opts{display:grid;gap:8px}
+.poll-opts button{
+  text-align:left;font:inherit;font-size:14px;background:var(--card);border:1px solid var(--line-2);
+  border-radius:var(--radius-sm);padding:9px 14px;cursor:pointer;color:var(--ink-2);
+  display:flex;justify-content:space-between;gap:10px;
+}
+.poll-opts button:hover{border-color:var(--gold);background:#fdf8ea}
+.poll-opts button .pct{color:var(--gold);font-weight:600;display:none}
+.poll-opts button.done{background:#f0ebdd;border-color:var(--gold)}
+.poll-opts button.done .pct{display:inline}
+.poll-tip{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+/* 页尾 */
+.footer{
+  background:var(--ink);color:#bdb7a6;margin-top:30px;padding:38px 0 22px;font-size:13.5px;
+}
+.footer .cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:28px}
+.footer .brand{color:#f3eee0;margin-bottom:10px}
+.footer .brand .name{color:#f3eee0;font-size:18px}
+.footer .pos{font-size:13px;line-height:1.8;color:#a8a294;max-width:24em}
+.footer h3{font-size:14px;color:#e6dcc4;margin:0 0 10px;letter-spacing:.5px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.footer ul a{color:#bdb7a6;font-size:13px}
+.footer ul a:hover{color:#f0d8a0;text-decoration:none}
+.footer .bottom{
+  border-top:1px solid #3a4767;margin-top:26px;padding-top:14px;display:flex;flex-wrap:wrap;gap:8px 20px;
+  justify-content:space-between;font-size:12.5px;color:#8f8a7c;
+}
+
+/* 回到顶部 */
+.totop{
+  position:fixed;right:18px;bottom:22px;z-index:80;width:42px;height:42px;border-radius:50%;
+  background:var(--ink);color:#f0d8a0;border:1px solid #4a5877;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;font-size:17px;
+  box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover{background:var(--ink-2)}
+
+/* 平板 */
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;gap:0}
+  aside.side{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:10px;align-items:start;
+  }
+  aside.side .side-card{margin-bottom:0}
+  .hero .wrap{grid-template-columns:1fr;gap:26px}
+  .hero-art{height:240px;order:2}
+  .pick-grid{grid-template-columns:1fr}
+  .ov-grid{grid-template-columns:1fr 1fr}
+  .news-grid{grid-template-columns:1fr 1fr}
+  .footer .cols{grid-template-columns:1fr 1fr;gap:22px}
+  .nav{display:none}
+  .nav.open{
+    display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px;gap:2px;
+    box-shadow:var(--shadow-lg);max-height:70vh;overflow:auto;
+  }
+  .nav.open a{padding:10px 8px}
+  .menu-btn{display:flex}
+  .header .wrap{position:relative}
+}
+/* 手机 */
+@media (max-width:640px){
+  .announce{font-size:12px}
+  .announce .txt{font-size:12px}
+  .brand .name{font-size:17px}
+  .search input{width:84px}
+  .ov-grid{grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  aside.side{grid-template-columns:1fr}
+  .hero{padding:38px 0 32px}
+  .hero h1{font-size:29px}
+  .upd-list li{grid-template-columns:64px 1fr;gap:8px}
+  .upd-list .tagx{grid-column:2;justify-self:start}
+  .deep{padding:18px 16px}
+  .compare{font-size:12.5px}
+  .compare th,.compare td{padding:6px 7px}
+  .pick-main img{height:160px}
+  .footer .cols{grid-template-columns:1fr}
+  .totop{right:12px;bottom:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .btn:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce">
+  <div class="wrap">
+    <span class="tag">更新</span>
+    <span class="txt">九色影视在线观看 <strong>11月7日</strong> 上线《雾岭档案》第2季全8集 · 修复版《南岸旧事》替换旧字幕 · 片库四色分级说明已补全</span>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="header">
+  <div class="wrap">
+    <a class="brand" href="/#top" aria-label="返回首页顶部">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b2438"/>
+        <circle cx="21" cy="23" r="7.5" fill="#e8b64c"/>
+        <circle cx="43" cy="23" r="7.5" fill="#d8574a"/>
+        <circle cx="32" cy="42" r="7.5" fill="#4fa3a0"/>
+        <rect x="30" y="12" width="4" height="14" rx="2" fill="#f6f3ec" opacity=".55"/>
+        <rect x="30" y="38" width="4" height="14" rx="2" fill="#f6f3ec" opacity=".35"/>
+      </svg>
+      <span class="name">九色影视在线观看</span>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="展开导航菜单" aria-expanded="false" aria-controls="siteNav">
+      <span></span>
+    </button>
+    <nav class="nav" id="siteNav" aria-label="主题导航">
+      <a href="/#overview">片库概览</a>
+      <a href="/#picks">本周精选</a>
+      <a href="/#updated">剧集更新</a>
+      <a href="/#channels">频道分类</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">观影指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#news">行业资讯</a>
+    </nav>
+    <div class="head-tools">
+      <div class="search-wrap">
+        <form class="search" id="searchForm" role="search">
+          <input type="search" id="searchInput" placeholder="搜剧名 / 类型" aria-label="站内查找条目">
+          <button type="submit">查找</button>
+        </form>
+        <div class="search-result" id="searchResult" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 主题首屏 -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="hero-kicker">片库 · 分级 · 版本说明</span>
+      <h1>九色影视在线观看</h1>
+      <p class="lead">把片库拆成可查的层级：悬疑剧按季归档，纪录片标拍摄年份，动画电影注明配音版本，老片修复版与胶片原版分列。每个条目带 <b>上线时间、时长、字幕版本</b>，选片前先看清差异，再决定从哪一集开始。</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="/#updated">看今日更新</a>
+        <a class="btn btn-ghost" href="/#channels">按频道找片</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1,286</b>在库条目</div>
+        <div><b>9</b>内容频道</div>
+        <div><b>47</b>本周新增与修复</div>
+        <div><b>4</b>分级标签</div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 380 300" role="presentation">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8b64c" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#d8574a" stop-opacity=".75"/>
+          </linearGradient>
+          <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4fa3a0" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#2f7d7a" stop-opacity=".6"/>
+          </linearGradient>
+        </defs>
+        <rect x="18" y="26" width="344" height="248" rx="16" fill="#232e46" stroke="#3a4767"/>
+        <rect x="38" y="48" width="150" height="92" rx="8" fill="url(#g1)"/>
+        <rect x="198" y="48" width="144" height="42" rx="8" fill="#2f3b57"/>
+        <rect x="198" y="98" width="144" height="42" rx="8" fill="url(#g2)"/>
+        <rect x="38" y="152" width="96" height="98" rx="8" fill="#2f3b57"/>
+        <rect x="144" y="152" width="96" height="98" rx="8" fill="#33405d"/>
+        <rect x="250" y="152" width="92" height="98" rx="8" fill="#2c3852"/>
+        <path d="M60 92 l22 -22 l22 22" fill="none" stroke="#1b2438" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+        <circle cx="270" cy="188" r="17" fill="none" stroke="#e8b64c" stroke-width="3"/>
+        <path d="M284 202 l14 14" stroke="#e8b64c" stroke-width="4" stroke-linecap="round"/>
+        <rect x="56" y="176" width="60" height="5" rx="2.5" fill="#8f9bb8"/>
+        <rect x="56" y="190" width="44" height="5" rx="2.5" fill="#67728e"/>
+        <rect x="56" y="204" width="52" height="5" rx="2.5" fill="#67728e"/>
+        <rect x="162" y="176" width="60" height="5" rx="2.5" fill="#8f9bb8"/>
+        <rect x="162" y="190" width="38" height="5" rx="2.5" fill="#67728e"/>
+        <rect x="268" y="230" width="58" height="5" rx="2.5" fill="#8f9bb8"/>
+        <rect x="268" y="216" width="42" height="5" rx="2.5" fill="#67728e"/>
+      </svg>
+      <span class="cap">片库结构示意：频道—季—版本</span>
+    </div>
+  </div>
+</section>
+
+<div class="wrap layout">
+  <main class="main-col" id="main">
+
+    <!-- 1 领域概览 -->
+    <section class="block" id="overview">
+      <div class="block-head">
+        <span class="no">01</span>
+        <h2>片库概览：九色影视在线观看能查到什么</h2>
+        <span class="note">截至 2026-11-08</span>
+      </div>
+      <p class="small" style="color:#42474f">片库按“频道—季—集—版本”四层归档。频道是入口，季决定集数范围，集是具体条目，版本记录字幕、配音、修复状态。同一个《南岸旧事》会有 1998 胶片版和 2024 修复版两条记录，时长相差 4 分钟，字幕也不同。查片时先确认版本，再确认集数，能少走很多弯路。</p>
+      <div class="ov-grid">
+        <div class="ov-card">
+          <h3>条目规模</h3>
+          <p>在库 1,286 条，剧集 812 条、电影 334 条、纪录片 98 条、动画 42 条。每条记录独立编号，带上线日期。</p>
+          <div class="meta">2026-10 月度核对，剔除 37 条重复项</div>
+        </div>
+        <div class="ov-card">
+          <h3>更新节奏</h3>
+          <p>周更剧集中在周三、周五晚 20:00 上线；纪录片多为每月第二批；老片修复没有固定周期，按修复进度插入。</p>
+          <div class="meta">近 30 天新增 214 集，修复替换 19 条</div>
+        </div>
+        <div class="ov-card">
+          <h3>版本标记</h3>
+          <p>四条分级标签：蓝色为常规版，绿色为修复版，橙色为导演剪辑，灰色为样片或花絮。标签决定字幕轨与时长。</p>
+          <div class="meta">标签规则 2026-10-21 更新，见深度解析</div>
+        </div>
+        <div class="ov-card">
+          <h3>检索方式</h3>
+          <p>支持剧名、导演、演员、集数区间三种查法。输入“雾岭 第二季 第3集”可直接定位单集，不必先翻频道。</p>
+          <div class="meta">站内查找同时覆盖别名与原名</div>
+        </div>
+        <div class="ov-card">
+          <h3>字幕轨</h3>
+          <p>常规版给简体中文硬字幕，修复版通常带简繁双语与可关闭字幕；方言剧额外标注吴语、粤语、川渝话。</p>
+          <div class="meta">方言标注覆盖 63 条，11 月新增 8 条</div>
+        </div>
+        <div class="ov-card">
+          <h3>条目信息</h3>
+          <p>每条至少给出上线时间、单集时长、总集数、版本标签、一句话内容摘要，以及一处可核对的来源说明。</p>
+          <div class="meta">信息缺项单独标注“待补”，不填空值</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 精选内容推荐 -->
+    <section class="block" id="picks">
+      <div class="block-head">
+        <span class="no">02</span>
+        <h2>本周精选：值得先看的五条</h2>
+        <span class="note">编辑按版本完整度挑选</span>
+      </div>
+      <div class="pick-grid">
+        <article class="pick-main">
+          <img src="https://picsum.photos/seed/jiuse-wuling/760/380" width="760" height="380" loading="lazy" alt="雾岭档案第二季山谷雾气中的旧档案馆外景">
+          <div class="in">
+            <h3>雾岭档案 第二季</h3>
+            <p>8 集全，单集 47 分钟，11 月 7 日一次性上线。第二季把第一季的镇广播站线收束到档案馆，第 5 集有 12 分钟无对白段落，靠环境音推进。修复版字幕在 11 月 7 日中午替换过一次，旧版把“保管员”译成“管理员”，新版已改。</p>
+            <p class="muted">悬疑 / 导演 沈立冬 / 蓝色常规版 + 绿色修复字幕</p>
+            <a class="btn btn-gold" href="/#updated" style="margin-top:4px">查看更新记录</a>
+          </div>
+        </article>
+        <div class="pick-side">
+          <div class="pick-item">
+            <div class="score">9.1<small>片库评分</small></div>
+            <div>
+              <h4>南岸旧事 修复版</h4>
+              <p>1998 胶片转 4K，时长 112 分钟，比原版多 4 分钟码头戏。</p>
+            </div>
+          </div>
+          <div class="pick-item">
+            <div class="score">8.7<small>片库评分</small></div>
+            <div>
+              <h4>河湾手记 第三季</h4>
+              <p>纪录片，6 集，拍摄年份 2023—2025，吴语原声加简中字幕。</p>
+            </div>
+          </div>
+          <div class="pick-item">
+            <div class="score">8.4<small>片库评分</small></div>
+            <div>
+              <h4>纸灯下的算术课</h4>
+              <p>动画电影，92 分钟，国语与日语双配音，10 月 30 日上线。</p>
+            </div>
+          </div>
+          <div class="pick-item">
+            <div class="score">8.0<small>片库评分</small></div>
+            <div>
+              <h4>旧城夜班车</h4>
+              <p>都市剧，24 集，周三周五双更，11 月 6 日更新至第 10 集。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="block" id="updated">
+      <div class="block-head">
+        <span class="no">03</span>
+        <h2>剧集更新时间表</h2>
+        <span class="note">11 月 1 日至 11 月 8 日</span>
+      </div>
+      <ul class="upd-list">
+        <li>
+          <span class="date">11-08 今天</span>
+          <span class="tt"><b>旧城夜班车</b> 第 11、12 集上线，单集 45 分钟，蓝色常规版</span>
+          <span class="tagx">周更</span>
+        </li>
+        <li>
+          <span class="date">11-07 昨天</span>
+          <span class="tt"><b>雾岭档案 第二季</b> 全 8 集上线，中午 12:40 替换第 5 集字幕轨</span>
+          <span class="tagx">整季</span>
+        </li>
+        <li>
+          <span class="date">11-05</span>
+          <span class="tt"><b>南岸旧事</b> 修复版上线，112 分钟，新增 4 分钟码头戏，胶片颗粒降噪处理</span>
+          <span class="tagx">修复</span>
+        </li>
+        <li>
+          <span class="date">11-03</span>
+          <span class="tt"><b>河湾手记 第三季</b> 第 5 集“渡口人家”上线，吴语原声，简中/繁中双字幕</span>
+          <span class="tagx">纪录片</span>
+        </li>
+        <li>
+          <span class="date">11-02</span>
+          <span class="tt"><b>纸灯下的算术课</b> 补上日语配音轨，配音表与片尾字幕核对一致</span>
+          <span class="tagx">版本</span>
+        </li>
+        <li>
+          <span class="date">10-30</span>
+          <span class="tt"><b>纸灯下的算术课</b> 上线，92 分钟，国语配音，绿色修复版画质标签</span>
+          <span class="tagx">动画</span>
+        </li>
+        <li>
+          <span class="date">10-28</span>
+          <span class="tt"><b>铁轨向北</b> 纪录片 4 集全上线，拍摄地黑龙江绥芬河，2019—2024 跨年素材</span>
+          <span class="tagx">纪录片</span>
+        </li>
+        <li>
+          <span class="date">10-25</span>
+          <span class="tt"><b>雾岭档案 第一季</b> 重制，第 1 集片头曲替换为 2026 年版，其余镜头未动</span>
+          <span class="tagx">重制</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 4 分类入口 -->
+    <section class="block" id="channels">
+      <div class="block-head">
+        <span class="no">04</span>
+        <h2>按频道找片</h2>
+        <span class="note">9 个频道，可复制的分类词</span>
+      </div>
+      <p class="small" style="color:#454b55;margin-bottom:14px">频道名直接对应检索词。想找“国产悬疑剧”“国产纪录片”“老片修复”“动画电影国语配音”，点对应频道即可，不用先进总片库再筛。</p>
+      <div class="cat-index">
+        <a href="/#updated">国产悬疑剧<em>148</em></a>
+        <a href="/#news">国产纪录片<em>96</em></a>
+        <a href="/#picks">老片修复<em>57</em></a>
+        <a href="/#guide">动画电影国语配音<em>42</em></a>
+        <a href="/#deep">方言剧字幕版<em>63</em></a>
+        <a href="/#faq">短剧与迷你剧<em>211</em></a>
+        <a href="/#news">都市职场剧<em>134</em></a>
+        <a href="/#picks">导演剪辑版<em>29</em></a>
+        <a href="/#news">历史题材剧<em>88</em></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="block" id="deep">
+      <div class="block-head">
+        <span class="no">05</span>
+        <h2>深度解析：修复版并不总是更接近原片</h2>
+        <span class="note">全页唯一主体阅读区</span>
+      </div>
+      <div class="deep">
+        <p>《南岸旧事》11 月 5 日上线的修复版，比 1998 年胶片原版多 4 分钟，主要集中在片尾码头一场。片库把两条记录分开标注：原版 108 分钟，修复版 112 分钟。这不是简单加长，修复过程中有 3 处画幅从 1.66:1 调到 1.85:1，边缘信息被裁掉一部分，人物手部在镜头左下角出现半秒不完整。判断修复版是否“更好”，得看你关心的是画面干净还是构图完整。</p>
+
+        <h3>两版时长与画幅的具体差异</h3>
+        <table class="compare">
+          <thead>
+            <tr><th>对比项</th><th>1998 胶片版</th><th>2026 修复版</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>总时长</td><td>108 分钟</td><td><b>112 分钟</b>，多码头戏 4 分钟</td></tr>
+            <tr><td>画幅比例</td><td>1.66:1</td><td>1.85:1，3 处镜头边缘裁切</td></tr>
+            <tr><td>字幕轨</td><td>简体中文硬字幕</td><td>简繁双语，可关闭</td></tr>
+            <tr><td>片头字幕</td><td>手写体标题，无修复说明</td><td>加 12 秒修复说明卡</td></tr>
+            <tr><td>音轨</td><td>单声道</td><td>5.1 混音，码头环境声重录</td></tr>
+          </tbody>
+        </table>
+        <p>片库把修复版归入绿色标签，常规版是蓝色。绿色不等于更优，只表示经过修复工序。11 月 5 日当天有 43 条检索指向“南岸旧事 修复版”，其中 9 条在评论里提到画幅问题——这个比例说明，画幅裁切不是少数人的敏感点。</p>
+
+        <h3>11 月 7 日字幕替换的时间线</h3>
+        <ul class="timeline">
+          <li><span class="d">11-07 09:10</span>《雾岭档案 第二季》第 5 集上线，字幕把“保管员”译为“管理员”。</li>
+          <li><span class="d">11-07 11:35</span>观众在评论区指出译名与第 2 集人物身份台词冲突，第 2 集明确说“档案室保管员”。</li>
+          <li><span class="d">11-07 12:40</span>字幕轨替换为 v2，改为“保管员”，同一集其余对白未动。</li>
+          <li><span class="d">11-07 15:20</span>片库在条目备注写明“第 5 集字幕 12:40 已换 v2”，旧版不再提供。</li>
+        </ul>
+        <p>这条时间线拆开看，事实是译名改动，回应是 1 小时零 5 分钟后的替换，转述来自评论区截取，推测部分则是“是否会统一全季译名”——目前只有第 5 集改动，第 3 集仍用“管理员”，尚未统一。判断要有可核对的中段：09:10 到 12:40 之间，字幕版本号从 v1 变成 v2，这是能查的。</p>
+
+        <div class="quote">片库修一条旧片，优先解决的是“能不能看清楚”，不是“是不是当年那一条”。两者冲突时，片库的做法是两条都留，标签分开。观众如果在乎构图，就选蓝色那条；在乎字幕，就选绿色那条。</div>
+
+        <h3>分级标签规则前后变化</h3>
+        <p>10 月 21 日之前，绿色标签同时覆盖“画质修复”和“字幕重做”，导致一批只换字幕的条目也被标绿。10 月 21 日规则拆开：绿色只给画面修复，字幕改动记在条目备注，不再影响标签。当天有 26 条记录从绿色改回蓝色，其中 17 条是只换字幕的剧集，9 条是仅调整音轨的纪录片。这个变化直接影响筛选结果——现在按绿色筛，出来的是真正做过画面处理的片子。</p>
+        <p>另一处可核对的判断：修复版的评分普遍高于原版，但评分人数少。《南岸旧事》修复版评分 9.1，参评 268 人；原版 8.6，参评 1,940 人。人数差 7 倍，评分差 0.5。把这两个数放在一起看，修复版的高分更像小样本，不宜直接当作质量结论。</p>
+      </div>
+    </section>
+
+    <!-- 6 体验指南 -->
+    <section class="block" id="guide">
+      <div class="block-head">
+        <span class="no">06</span>
+        <h2>观影指南：四个步骤确认版本</h2>
+        <span class="note">适合第一次用片库的人</span>
+      </div>
+      <ol class="steps">
+        <li><b>先看标签颜色。</b>蓝色是常规版，绿色是画面修复版，橙色是导演剪辑，灰色是样片或花絮。颜色在标题右侧，点开条目第一屏就能看到。别把绿色默认当“最好”，先看你需要的字幕和时长。</li>
+        <li><b>再核对时长。</b>电影条目会写“108 分钟 / 112 分钟（修复版）”这类双值。剧集写单集时长与总集数，例如“8 集 × 47 分钟”。时长不一致时，片库在备注里说明差在哪里，找不到说明就标“待补”。</li>
+        <li><b>确认字幕轨。</b>方言剧条目会标“吴语原声 + 简中”，修复版标“简繁双语可关闭”。如果只想听原声、不想看字幕，先看备注里有没有“硬字幕”三个字，硬字幕意味着关不掉。</li>
+        <li><b>最后查更新记录。</b>剧集条目底部有更新时间线，记录每次替换、补轨、改译名的时间点。《雾岭档案》第 5 集的字幕替换就写在里面，时间精确到分钟。</li>
+      </ol>
+      <p class="muted" style="margin-top:12px">四步走完再点播放，能避免“看到一半发现字幕不对”这类返工。片库的条目备注默认展开，不需要额外点开。</p>
+    </section>
+
+    <!-- 7 用户评论 -->
+    <section class="block" id="comments">
+      <div class="block-head">
+        <span class="no">07</span>
+        <h2>用户评论：具体条目上的具体意见</h2>
+        <span class="note">按时间倒序，保留原话</span>
+      </div>
+      <div class="cmt-list">
+        <div class="cmt pos">
+          <div class="who"><span class="av" style="background:#2f7d7a">林</span><span class="nm">林间小径</span><span class="tm">11-08 09:42</span></div>
+          <p>《雾岭档案》第二季第 5 集那个 12 分钟无对白段落，环境音做得细，档案馆翻页声和远处火车声层次清楚。字幕换成 v2 之后“保管员”终于对了，第 3 集还是“管理员”，希望一起改。</p>
+        </div>
+        <div class="cmt neg">
+          <div class="who"><span class="av" style="background:#b8433a">陈</span><span class="nm">陈默看片</span><span class="tm">11-07 22:18</span></div>
+          <p>《南岸旧事》修复版画幅从 1.66 改成 1.85，码头那场左下角手部被切掉半秒，看得别扭。多 4 分钟是好事，但构图完整性下降，这点片库备注里写得不够显眼，我是看完才翻到的。</p>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av" style="background:#b8862a">周</span><span class="nm">周三夜班</span><span class="tm">11-07 20:05</span></div>
+          <p>《旧城夜班车》第 10 集节奏比前 9 集慢，配角线铺得太开，24 集里前 10 集还没进主线。演员表演没问题，问题在剪辑。等第 12 集之后再看会不会收回来。</p>
+        </div>
+        <div class="cmt pos">
+          <div class="who"><span class="av" style="background:#4f6b8a">阿</span><span class="nm">阿禾</span><span class="tm">11-06 14:30</span></div>
+          <p>《河湾手记》第三季第 5 集“渡口人家”，吴语原声保留得完整，简繁双语字幕位置不挡画面。拍摄年份写在条目里是 2023—2025，跨了三年，能看出季节变化。</p>
+        </div>
+        <div class="cmt neg">
+          <div class="who"><span class="av" style="background:#8a5a4f">老</span><span class="nm">老吴不追剧</span><span class="tm">11-05 11:12</span></div>
+          <p>《纸灯下的算术课》日语配音轨是补上的，但口型对不上，第 23 分钟那段明显。国语版没问题，日语版像后期硬贴。片库标了“补轨”，能不能把补轨的具体日期也写出来。</p>
+        </div>
+        <div class="cmt">
+          <div class="who"><span class="av" style="background:#5a6b4f">小</span><span class="nm">小满</span><span class="tm">11-04 19:48</span></div>
+          <p>绿色标签拆分之后筛选清爽多了，之前点绿色出来一堆只换字幕的，现在按绿色筛基本是画面修复的。10 月 21 日那次调整我注意到了，条目变动挺明显。</p>
+        </div>
+        <div class="cmt neg">
+          <div class="who"><span class="av" style="background:#7a5a8a">半</span><span class="nm">半杯凉茶</span><span class="tm">11-03 23:02</span></div>
+          <p>《铁轨向北》第 2 集录音有风噪，2019 年那批素材明显没处理。纪录片可以保留现场感，但风噪压过解说就不合适。4 集里第 2 集问题最集中，第 3、4 集好些。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 相关资讯 -->
+    <section class="block" id="news">
+      <div class="block-head">
+        <span class="no">08</span>
+        <h2>行业资讯与片库动态</h2>
+        <span class="note">信息与条目更新分开写</span>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="dt">11-06</div>
+          <h3>国产纪录片季度片单公布，河湾系列续订</h3>
+          <p>11 月 6 日公布的季度片单里，《河湾手记》位列续订项目，第四季拍摄地选在浙东运河沿线，计划 2027 年春季开机。片库已把续订信息记入第三季条目备注，不影响现有 6 集内容。</p>
+        </article>
+        <article class="news-card">
+          <div class="dt">11-05</div>
+          <h3>胶片修复标准讨论：1.66 与 1.85 之争</h3>
+          <p>11 月 5 日一场修复技术讨论会上，有修复师提出老片转数字时应保留原始画幅，不应统一到 1.85。这与《南岸旧事》修复版的画幅调整直接相关。片库立场是两版并存，标签分开说明。</p>
+        </article>
+        <article class="news-card">
+          <div class="dt">11-04</div>
+          <h3>方言剧字幕规范草案征求意见</h3>
+          <p>草案建议方言剧标注“原声语言 + 字幕语言”两栏，并对吴语、粤语、川渝话给出统一写法。片库现有 63 条方言条目已按草案格式试排，11 月 4 日起新条目直接采用两栏标注。</p>
+        </article>
+        <article class="news-card">
+          <div class="dt">11-02</div>
+          <h3>短剧集数压缩趋势明显</h3>
+          <p>11 月 2 日一份平台片单统计显示，新立项短剧平均 12 集，比去年同期少 4 集。片库“短剧与迷你剧”频道目前 211 条，8 至 16 集区间占 64%。集数变少，单集时长普遍提高到 25 分钟以上。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 9 相关推荐 标签 -->
+    <section class="block" id="recommend">
+      <div class="block-head">
+        <span class="no">09</span>
+        <h2>相关推荐：可直接搜的标签</h2>
+        <span class="note">每个词都能在片库找到条目</span>
+      </div>
+      <div class="tags">
+        <a href="/#updated">雾岭档案第二季字幕版本</a>
+        <a href="/#picks">南岸旧事修复版画幅</a>
+        <a href="/#guide">吴语纪录片原声</a>
+        <a href="/#faq">导演剪辑版区别</a>
+        <a href="/#news">短剧12集</a>
+        <a href="/#channels">国产悬疑剧2026</a>
+        <a href="/#comments">老片胶片颗粒</a>
+        <a href="/#news">历史题材剧服化道</a>
+        <a href="/#picks">动画电影日语配音</a>
+        <a href="/#guide">简繁双语字幕可关闭</a>
+        <a href="/#deep">修复版评分小样本</a>
+      </div>
+    </section>
+
+    <!-- 10 FAQ -->
+    <section class="block" id="faq">
+      <div class="block-head">
+        <span class="no">10</span>
+        <h2>常见问题</h2>
+        <span class="note">按提问频率排序</span>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>修复版的画面一定比原版清楚吗？</summary>
+          <p class="ans">画面清晰度通常更高，但构图可能变化。《南岸旧事》修复版把画幅从 1.66:1 调到 1.85:1，3 处镜头边缘被裁，人物手部在码头一场少了半秒。清晰度和构图完整度是两件事，片库把两版分开标注，就是让这两项可以分别核对。</p>
+        </details>
+        <details>
+          <summary>方言剧的字幕能不能关？</summary>
+          <p class="ans">看条目备注里的字幕类型。标注“可关闭”的是软字幕，能关；标注“硬字幕”的关不掉，字幕已经烧进画面。目前 63 条方言条目中，41 条是可关闭软字幕，22 条是硬字幕，吴语剧里硬字幕比例偏高，主要在 2020 年之前上线的条目。</p>
+        </details>
+        <details>
+          <summary>导演剪辑版和常规版差多少？</summary>
+          <p class="ans">差在时长和段落取舍，没有统一标准。片库橙色标签的 29 条记录里，剪辑版比常规版平均多 11 分钟，最长一条多 27 分钟。多出来的内容多为支线人物戏，是否影响主线理解因片而异，条目备注会写清增加段落落点。</p>
+        </details>
+        <details>
+          <summary>为什么同一部剧会出现两个评分？</summary>
+          <p class="ans">不同版本分列评分，参评人数也不同。《南岸旧事》修复版 9.1 分、268 人，原版 8.6 分、1,940 人。人数少的一侧波动大，看评分时先看参评人数，再看分数，单看分数容易误判。</p>
+        </details>
+        <details>
+          <summary>剧集更新表里的“整季”和“周更”是什么意思？</summary>
+          <p class="ans">“整季”指全部集数同一天上线，如《雾岭档案》第二季 8 集在 11 月 7 日一次放出。“周更”指按周分批，如《旧城夜班车》周三、周五各更两集。两种模式的条目备注写法不同，整季写“全 N 集上线”，周更写“更新至第 N 集”。</p>
+        </details>
+        <details>
+          <summary>老片修复的颗粒感是缺点吗？</summary>
+          <p class="ans">颗粒是胶片材质的一部分，修得太干净反而失真。《南岸旧事》修复版做了降噪，但保留了一定颗粒；有观众在评论里说“降噪过头看着像数字拍摄”。颗粒保留多少没有统一答案，片库在备注里写降噪处理方式，供你权衡。</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- 11 榜单 -->
+    <section class="block" id="rank">
+      <div class="block-head">
+        <span class="no">11</span>
+        <h2>本周片库热度榜</h2>
+        <span class="note">按条目检索量排序，非评分榜</span>
+      </div>
+      <ol class="rank">
+        <li><b>雾岭档案 第二季</b><span>检索 4,812 次 · 11-07 上线</span></li>
+        <li><b>旧城夜班车</b><span>检索 3,207 次 · 更新至第 12 集</span></li>
+        <li><b>南岸旧事 修复版</b><span>检索 2,964 次 · 11-05 上线</span></li>
+        <li><b>纸灯下的算术课</b><span>检索 1,855 次 · 日语配音轨补上</span></li>
+        <li><b>河湾手记 第三季</b><span>检索 1,632 次 · 第 5 集更新</span></li>
+        <li><b>铁轨向北</b><span>检索 1,204 次 · 4 集全</span></li>
+        <li><b>雾岭档案 第一季</b><span>检索 986 次 · 片头曲重制</span></li>
+        <li><b>南岸旧事 原版</b><span>检索 741 次 · 108 分钟胶片版</span></li>
+      </ol>
+    </section>
+
+    <!-- 12 互动 -->
+    <section class="block" id="poll">
+      <div class="block-head">
+        <span class="no">12</span>
+        <h2>本周投票：修复版你最在意哪一项</h2>
+        <span class="note">结果仅用于片库备注排序</span>
+      </div>
+      <div class="poll">
+        <h3>选修复版时，你先看什么？</h3>
+        <p class="q">参与人数 1,076，选项可改一次</p>
+        <div class="poll-opts" id="pollOpts">
+          <button type="button" data-pct="46">画幅是否与原版一致<span class="pct">46%</span></button>
+          <button type="button" data-pct="27">字幕是否可关闭<span class="pct">27%</span></button>
+          <button type="button" data-pct="18">新增段落时长<span class="pct">18%</span></button>
+          <button type="button" data-pct="9">音轨混音方式<span class="pct">9%</span></button>
+        </div>
+        <p class="poll-tip">点击选项即可记录，数据每日 20:00 汇总一次。</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="side" aria-label="侧栏信息">
+    <div class="side-card">
+      <h2>栏目导航</h2>
+      <ul class="side-nav" id="sideNav">
+        <li><a href="/#overview">片库概览</a></li>
+        <li><a href="/#picks">本周精选</a></li>
+        <li><a href="/#updated">剧集更新</a></li>
+        <li><a href="/#channels">频道分类</a></li>
+        <li><a href="/#deep">深度解析</a></li>
+        <li><a href="/#guide">观影指南</a></li>
+        <li><a href="/#comments">用户评论</a></li>
+        <li><a href="/#news">行业资讯</a></li>
+        <li><a href="/#recommend">相关推荐</a></li>
+        <li><a href="/#faq">常见问题</a></li>
+      </ul>
+    </div>
+
+    <div class="side-card">
+      <h3>版本速查</h3>
+      <div class="fact-box">
+        <div><span>蓝色标签</span><span>常规版</span></div>
+        <div><span>绿色标签</span><span>画面修复</span></div>
+        <div><span>橙色标签</span><span>导演剪辑</span></div>
+        <div><span>灰色标签</span><span>样片 / 花絮</span></div>
+        <div><span>方言条目</span><span>63 条</span></div>
+        <div><span>可关闭字幕</span><span>41 条</span></div>
+      </div>
+    </div>
+
+    <div class="side-card">
+      <h3>正在更新</h3>
+      <ul class="side-list">
+        <li><b>旧城夜班车</b>周三、周五 20:00 更新，已到第 12 集<span class="m">11-08 更新</span></li>
+        <li><b>河湾手记 第三季</b>每周一集，已到第 5 集<span class="m">11-03 更新</span></li>
+        <li><b>雾岭档案 第二季</b>整季已上线，字幕换 v2<span class="m">11-07 更新</span></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="/#top" aria-label="九色影视在线观看首页">
+          <svg class="mark" viewBox="0 0 64 64" aria-hidden="true" style="width:30px;height:30px">
+            <rect width="64" height="64" rx="14" fill="#2c3a56"/>
+            <circle cx="21" cy="23" r="7.5" fill="#e8b64c"/>
+            <circle cx="43" cy="23" r="7.5" fill="#d8574a"/>
+            <circle cx="32" cy="42" r="7.5" fill="#4fa3a0"/>
+          </svg>
+          <span class="name">九色影视在线观看</span>
+        </a>
+        <p class="pos">按频道、季、集、版本四层归档，标清时长与字幕差异，修复版与原版分列可查。</p>
+      </div>
+      <div>
+        <h3>找片入口</h3>
+        <ul>
+          <li><a href="/#updated">剧集更新时间表</a></li>
+          <li><a href="/#channels">九大频道分类</a></li>
+          <li><a href="/#rank">本周热度榜</a></li>
+          <li><a href="/#recommend">相关标签索引</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>看懂版本</h3>
+        <ul>
+          <li><a href="/#deep">修复版画幅差异</a></li>
+          <li><a href="/#deep">分级标签规则变化</a></li>
+          <li><a href="/#guide">四步确认版本</a></li>
+          <li><a href="/#faq">字幕能否关闭</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>参与与说明</h3>
+        <ul>
+          <li><a href="/#comments">用户评论原话</a></li>
+          <li><a href="/#poll">本周投票</a></li>
+          <li><a href="/#news">行业资讯</a></li>
+          <li><a href="/#overview">条目信息说明</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>页面内容与条目信息为示例数据，用于展示片库分类结构；更新时间对应正文 11 月 5 日至 8 日的可核对条目。</span>
+      <span>© 2026 九色影视在线观看 · 版权与备案信息以运营方公示为准</span>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  /* 移动端菜单 */
+  var menuBtn = document.getElementById('menuBtn');
+  var nav = document.getElementById('siteNav');
+  if(menuBtn && nav){
+    menuBtn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', open ? '收起导航菜单' : '展开导航菜单');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 980){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.setAttribute('aria-label','展开导航菜单');
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+        menuBtn.focus();
+      }
+    });
+  }
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var sections = sideLinks.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+
+  function highlight(){
+    var pos = window.scrollY + 160;
+    var current = null;
+    sections.forEach(function(sec){
+      if(sec.offsetTop <= pos) current = sec.id;
+    });
+    sideLinks.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '/#' + current);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  highlight();
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function toggleTop(){
+    if(window.scrollY > 520){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', toggleTop, {passive:true});
+  toggleTop();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 本地查找 */
+  var data = [
+    {t:'雾岭档案 第二季', s:'悬疑剧 · 8集 · 字幕v2 · 11-07上线'},
+    {t:'雾岭档案 第一季', s:'悬疑剧 · 片头曲2026重制 · 10-25更新'},
+    {t:'南岸旧事 修复版', s:'老片修复 · 112分钟 · 画幅1.85 · 11-05上线'},
+    {t:'南岸旧事 原版', s:'老片 · 108分钟 · 画幅1.66 · 胶片版'},
+    {t:'河湾手记 第三季', s:'国产纪录片 · 第5集渡口人家 · 吴语原声'},
+    {t:'纸灯下的算术课', s:'动画电影 · 92分钟 · 国语/日语配音'},
+    {t:'旧城夜班车', s:'都市职场剧 · 24集 · 更新至第12集'},
+    {t:'铁轨向北', s:'国产纪录片 · 4集全 · 风噪问题见评论'},
+    {t:'导演剪辑版区别', s:'指南 · 橙色标签 · 平均多11分钟'},
+    {t:'简繁双语字幕可关闭', s:'字幕说明 · 软字幕与硬字幕区别'}
+  ];
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var box = document.getElementById('searchResult');
+
+  function render(q){
+    q = (q || '').trim();
+    if(!q){ box.classList.remove('show'); box.innerHTML=''; return; }
+    var hits = data.filter(function(d){ return d.t.indexOf(q) > -1 || d.s.indexOf(q) > -1; });
+    if(hits.length === 0){
+      box.innerHTML = '<p>没有找到与“' + escapeHtml(q) + '”相关的条目。试试剧名、频道词或版本词，例如“修复版”“吴语”“第5集”。</p>';
+    } else {
+      box.innerHTML = hits.map(function(d){
+        return '<a href="/#updated">' + escapeHtml(d.t) + '<br><span style="color:#6b6a63;font-size:12px">' + escapeHtml(d.s) + '</span></a>';
+      }).join('');
+    }
+    box.classList.add('show');
+  }
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      render(input.value);
+    });
+    input.addEventListener('input', function(){ render(input.value); });
+    document.addEventListener('click', function(e){
+      if(!form.contains(e.target) && !box.contains(e.target)){
+        box.classList.remove('show');
+      }
+    });
+  }
+
+  /* 投票 */
+  var pollOpts = document.getElementById('pollOpts');
+  if(pollOpts){
+    pollOpts.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if(!btn) return;
+      Array.prototype.forEach.call(pollOpts.querySelectorAll('button'), function(b){
+        b.classList.remove('done');
+      });
+      btn.classList.add('done');
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "九色影视在线观看",
+  "description": "片库按频道、季、集、版本四层归档，标注时长、字幕与修复状态，提供条目更新记录与选片指南。",
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "修复版的画面一定比原版清楚吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "画面清晰度通常更高，但构图可能变化。《南岸旧事》修复版把画幅从1.66:1调到1.85:1，3处镜头边缘被裁，人物手部在码头一场少了半秒。清晰度和构图完整度是两件事，两版分开标注便于分别核对。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "方言剧的字幕能不能关？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "看条目备注里的字幕类型。标注可关闭的是软字幕，能关；标注硬字幕的关不掉，字幕已经烧进画面。目前63条方言条目中，41条是可关闭软字幕，22条是硬字幕。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "导演剪辑版和常规版差多少？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "差在时长和段落取舍，没有统一标准。橙色标签的29条记录里，剪辑版比常规版平均多11分钟，最长一条多27分钟，多出来的内容多为支线人物戏。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么同一部剧会出现两个评分？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不同版本分列评分，参评人数也不同。《南岸旧事》修复版9.1分、268人，原版8.6分、1940人。人数少的一侧波动大，看评分时先看参评人数。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "剧集更新表里的整季和周更是什么意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "整季指全部集数同一天上线，如《雾岭档案》第二季8集在11月7日一次放出。周更指按周分批，如《旧城夜班车》周三、周五各更两集。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "老片修复的颗粒感是缺点吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "颗粒是胶片材质的一部分，修得太干净反而失真。《南岸旧事》修复版做了降噪，但保留了一定颗粒，有观众在评论里说降噪过头看着像数字拍摄。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
